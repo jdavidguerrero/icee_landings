@@ -9,6 +9,12 @@ dist/
 *.tsbuildinfo
 .DS_Store
 
+# Explicit per-app build output (belt + suspenders)
+apps/corporate/.next/
+apps/corporate/.turbo/
+apps/product/.next/
+apps/product/.turbo/
+
 # Large binary assets — serve from CDN, not git
 *.mp4
 *.mov
