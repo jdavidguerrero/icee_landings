@@ -79,7 +79,7 @@ export default function Section02() {
                       muted
                       loop
                       playsInline
-                      poster="/images/icee_pos_2.png"
+                      poster="/images/icee_pos_2_nobg.png"
                       className="w-full md:w-[500px] h-auto object-cover"
                       aria-label="Terminal Icee POS en uso — pantalla táctil, impresora y lector"
                     >

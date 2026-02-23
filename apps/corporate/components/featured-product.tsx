@@ -62,7 +62,7 @@ export default function FeaturedProduct() {
                     muted
                     loop
                     playsInline
-                    poster="/images/icee_pos.png"
+                    poster="/images/icee_pos_nobg.png"
                     className="w-full h-auto object-cover"
                     aria-label="Demostración Icee POS en acción"
                   >
