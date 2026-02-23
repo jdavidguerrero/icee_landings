@@ -1,11 +1,11 @@
 node_modules/
 .next/
+.turbo/
 out/
 dist/
 .env
 .env.local
 .env.*.local
-.turbo/
 *.tsbuildinfo
 .DS_Store
 
@@ -16,3 +16,4 @@ dist/
 *.avi
 packages/assets/
 apps/corporate/public/videos/
+apps/product/public/videos/
