@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 export default function Section02() {
   return (
     <section data-aos-id-2="">
@@ -71,19 +69,27 @@ export default function Section02() {
                 </div>
               </div>
 
-              {/* Image */}
+              {/* Video player */}
               <div className="md:absolute md:left-[412px] md:top-0 -mb-12 mt-8 md:mt-16 md:mb-0">
-                <div className="relative -mx-16 md:mx-0">
-                  <div data-aos="fade-up" data-aos-anchor="[data-aos-id-2]">
-                    <Image
-                      src="/images/terminales.png"
-                      className="md:max-w-none"
-                      style={{ height: 'auto' }}
-                      width={500}
-                      height={500}
-                      sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 500px"
-                      alt="Terminal Icee POS con impresora y pantalla táctil"
-                    />
+                <div className="relative -mx-16 md:mx-0" data-aos="fade-up" data-aos-anchor="[data-aos-id-2]">
+                  <div className="relative rounded-2xl overflow-hidden border border-[#00B4D8]/20 shadow-2xl shadow-black/50 bg-black">
+                    {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      poster="/images/icee_pos_2.png"
+                      className="w-full md:w-[500px] h-auto object-cover"
+                      aria-label="Terminal Icee POS en uso — pantalla táctil, impresora y lector"
+                    >
+                      <source src="/videos/icee_pos_1.mp4" type="video/mp4" />
+                    </video>
+                    {/* Overlay badge bottom-right */}
+                    <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] animate-pulse" aria-hidden="true" />
+                      <span className="text-xs text-white/80 font-medium">100% en español</span>
+                    </div>
                   </div>
                 </div>
               </div>

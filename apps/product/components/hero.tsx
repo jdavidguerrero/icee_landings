@@ -76,7 +76,7 @@ export default function Hero() {
                   aria-hidden="true"
                 />
                 <Image
-                  src="/images/terminales.png"
+                  src="/images/icee_pos.png"
                   className="md:max-w-none"
                   style={{ height: 'auto' }}
                   width={548}
