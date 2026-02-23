@@ -83,7 +83,7 @@ export default function Section02() {
                       className="w-full md:w-[500px] h-auto object-cover"
                       aria-label="Terminal Icee POS en uso — pantalla táctil, impresora y lector"
                     >
-                      <source src="/videos/icee_pos_1.mp4" type="video/mp4" />
+                      <source src="/videos/icee_pos_2.mp4" type="video/mp4" />
                     </video>
                     {/* Overlay badge bottom-right */}
                     <div className="absolute bottom-3 right-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm rounded-full px-2.5 py-1 border border-white/10">
