@@ -16,6 +16,7 @@
     "clean": "turbo run clean && rm -rf node_modules"
   },
   "devDependencies": {
+    "caniuse-lite": "^1.0.30001774",
     "turbo": "^2"
   },
   "packageManager": "npm@10.0.0"
