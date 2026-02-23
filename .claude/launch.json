@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "corporate",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:corporate"],
+      "port": 3000
+    },
+    {
+      "name": "product",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev:product"],
+      "port": 3001
+    }
+  ]
+}

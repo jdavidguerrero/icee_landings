@@ -1,0 +1,25 @@
+#!/bin/bash
+ASSETS="packages/assets"
+BASE="https://static.wixstatic.com/media"
+mkdir -p "$ASSETS/logos" "$ASSETS/partners" "$ASSETS/images" "$ASSETS/product" "$ASSETS/videos"
+# Logos
+curl -sL -o "$ASSETS/logos/icee-white.png" "$BASE/5447f0_6fb3740c301e4db7bc1009b573a36032~mv2.png"
+curl -sL -o "$ASSETS/logos/icee-ecuador.png" "$BASE/5447f0_4d53bbe07f8c4e9ca0d5303683f7aac1~mv2.png"
+curl -sL -o "$ASSETS/logos/icee-colombia.png" "$BASE/5447f0_84eff2870a814d0a8bbe04ad984c930b~mv2.png"
+curl -sL -o "$ASSETS/logos/icee-usa.png" "$BASE/5447f0_a8beae3adbbb40eea6d30c3bf3f62e89~mv2.png"
+# Partners
+curl -sL -o "$ASSETS/partners/newland.png" "$BASE/5447f0_f9dc78b58e94496688809065a34c0b96~mv2.png"
+curl -sL -o "$ASSETS/partners/sinova.png" "$BASE/5447f0_da8215dcc2eb4a9da243c2bc7d532f65~mv2.png"
+curl -sL -o "$ASSETS/partners/keenon.png" "$BASE/5447f0_70b5d79663124fd0995572921ca5825e~mv2.png"
+curl -sL -o "$ASSETS/partners/spectra.png" "$BASE/5447f0_70fc397da21947359e197ec24d78b298~mv2.png"
+curl -sL -o "$ASSETS/partners/urovo.png" "$BASE/5447f0_9a7e863416c9422ea98ebcea6ce0448d~mv2.png"
+curl -sL -o "$ASSETS/partners/topwise.png" "$BASE/5447f0_4d767c36671040fb8ae81afe74344f2b~mv2.png"
+curl -sL -o "$ASSETS/partners/ciontek.png" "$BASE/5447f0_9dd7cb178f41489f90045dd50923dac1~mv2.png"
+curl -sL -o "$ASSETS/partners/sunmi.png" "$BASE/5447f0_687abeb6c8294c0daa6d1fd02dc8a679~mv2.png"
+curl -sL -o "$ASSETS/partners/nexgo.png" "$BASE/5447f0_e1dfbb353ce3406289640217eaab0b2a~mv2.png"
+curl -sL -o "$ASSETS/partners/verifone.png" "$BASE/5447f0_2039d630f1194a8fb3c0885ec58bfd1c~mv2.png"
+# Images
+curl -sL -o "$ASSETS/images/hero-bg.jpg" "$BASE/5447f0_af213ee884274f6d82698ffb1c7b5624~mv2.jpg"
+curl -sL -o "$ASSETS/images/lineas-negocio.png" "$BASE/5447f0_472e8997b10c4eab8de0343b516f9d92~mv2.png"
+curl -sL -o "$ASSETS/images/terminales.png" "$BASE/5447f0_a4451feadb9340308262bee7c1acb069~mv2.png"
+echo "✅ Assets downloaded to $ASSETS/"

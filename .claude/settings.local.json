@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(extract-assets.sh:*)",
+      "Bash(chmod:*)",
+      "Bash(./extract-assets.sh:*)",
+      "Bash(npm install:*)",
+      "Bash(npm audit:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(npx tsc:*)",
+      "Bash(python3:*)",
+      "Bash(ls:*)",
+      "WebFetch(domain:auxiliarcontable825.wixsite.com)",
+      "Bash(curl -sL \"https://auxiliarcontable825.wixsite.com/icee-electronics-s\")",
+      "Bash(PAGE_JSON_URL='https://siteassets.parastorage.com/pages/pages/thunderbolt?appDefinitionIdToSiteRevision=%7B%22d90652a2-f5a1-4c7c-84c4-d4cdcc41f130%22%3A%229292%22%2C%2214271d6f-ba62-d045-549b-ab972ae1f70e%22%3A%2225%22%2C%22b976560c-3122-4351-878f-453f337b7245%22%3A%221291%22%7D&beckyExperiments=.DatePickerPortal%2C.DisableDocumentScrollWhenLightBoxOpen%2C.EnableCustomCSSVarsForLoginSocialBar%2C.FreemiumBannerOdeditor%2C.LoginBarEnableLoggingInStateInSSR%2C.TextInputAutoFillFix%2C.UseLoginSocialBarCustomMenu%2C.UseNewLoginSocialBarCustomMenuPositioning%2C.UseNewLoginSocialBarElementStructure%2C.UseNewLoginSocialBarMemberInitialsAvatar%2C.VerticalMenu_uiType_NativeMapper%2C.WixFreeSiteBannerDesktop%2C.WixFreeSiteBannerMobile%2C.addIdAsClassName%2C.buttonUdp%2C.calculateCollapsibleTextLineHeightByFont%2C.disableBuilderWixComponents%2C.dom_store%2C.dynamicSlots%2C.fiveGridLineStudioSkins%2C.imageEncodingAVIF%2C.isClassNameToRootEnabled%2C.motionTimeAnimationsCSS%2C.propsCarmiMappersMigration1%2C.propsCarmiMappersMigration4%2C.propsCarmiMappersMigration5%2C.removeDynamicModelTopologyFromSiteAssets%2C.shouldUseResponsiveImages%2C.svgResolver_2%2C.takeAppDependenciesFromCSM%2C.updateRichTextSemanticClassNamesOnCorvid%2C.useClassnameInResponsiveAppWidget%2C.useImageAvifFormatInNativeProGallery%2C.useResponsiveImgClassicFixed%2C.useSvgLoaderFeature%2C.useSvgLoaderFeatureOnBuilderComps&blocksBuilderManifestGeneratorVersion=1.129.0&contentType=application%2Fjson&deviceType=Desktop&dfCk=6&dfVersion=1.5286.0&disableStaticPagesUrlHierarchy=false&editorName=Unknown&experiments=dm_bgScrubToMotionFixer%2Cdm_masterPageVariablesQueryFixer%2Cdm_migrateOldHoverBoxToNewFixer&externalBaseUrl=https%3A%2F%2Fauxiliarcontable825.wixsite.com%2Ficee-electronics-s&fileId=427f9587.bundle.min&formFactor=desktop&freemiumBanner=true&hasTPAWorkerOnSite=false&hasUserDomainMedia=false&isBuilderComponentModel=false&isHttps=true&isInSeo=false&isMultilingualEnabled=true&isTrackClicksAnalyticsEnabled=false&isUrlMigrated=true&isWixCodeOnPage=false&isWixCodeOnSite=false&language=es&languageResolutionMethod=QueryParam&metaSiteId=117e22bc-51bf-4949-986c-3835d4587c96&module=thunderbolt-features&oneDocEnabled=true&originalLanguage=es&pageId=5447f0_16dda1ef8f9610f095be81352a881ba8_63.json&pilerExperiments=specs.piler.useEditorReactComponents&quickActionsMenuEnabled=false&registryLibrariesTopology=%5B%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22wixui%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.14912.0%22%7D%2C%7B%22artifactId%22%3A%22editor-elements%22%2C%22namespace%22%3A%22dsgnsys%22%2C%22url%22%3A%22https%3A%2F%2Fstatic.parastorage.com%2Fservices%2Feditor-elements%2F1.14912.0%22%7D%5D&remoteWidgetStructureBuilderVersion=1.251.0&siteId=33de62d8-792a-47ac-ad94-c5ccb54cedf5&siteRevision=63&staticHTMLComponentUrl=https%3A%2F%2Fauxiliarcontable825-wixsite-com.filesusr.com%2F&useSandboxInHTMLComp=true&viewMode=desktop')",
+      "Bash(curl:*)",
+      "Bash(# Try fetching the document JSON via Wix''s platform API curl -sL ''https://www.wix.com/_api/wix-public-html-info-webapp/v1/info?metaSiteId=117e22bc-51bf-4949-986c-3835d4587c96'' -H \"\"Accept: application/json\"\" | python3 -m json.tool)",
+      "Bash(node -e \"require\\(''/Users/juandavidguerrerocastro/Documents/PROJECTS/ICEE/icee_landings/node_modules/framer-motion/dist/framer-motion.cjs.js''\\)\")",
+      "Bash(node -e:*)",
+      "Bash(echo:*)",
+      "Bash(git rm:*)",
+      "Bash(cat:*)",
+      "Bash(npm run build:*)",
+      "Bash(git rev-list:*)",
+      "Bash(git cat-file:*)",
+      "Bash(sort:*)",
+      "Bash(xargs -I{} sh -c 'size=$\\(git cat-file -s \"\"$1\"\" 2>/dev/null\\); echo \"\"$size $2\"\"' _ {})",
+      "Bash(xargs du:*)",
+      "Bash(pip3 install:*)",
+      "Bash(git filter-repo:*)",
+      "Bash(pyenv global:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(git stash:*)"
+    ]
+  }
+}

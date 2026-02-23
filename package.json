@@ -1,0 +1,22 @@
+{
+  "name": "icee-landings",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "dev:corporate": "turbo run dev --filter=@icee/corporate",
+    "dev:product": "turbo run dev --filter=@icee/product",
+    "build": "turbo run build",
+    "build:corporate": "turbo run build --filter=@icee/corporate",
+    "build:product": "turbo run build --filter=@icee/product",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "turbo": "^2"
+  },
+  "packageManager": "npm@10.0.0"
+}
