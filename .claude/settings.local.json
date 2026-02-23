@@ -32,7 +32,19 @@
       "Bash(git filter-repo:*)",
       "Bash(pyenv global:*)",
       "Bash(git filter-branch:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)",
+      "Bash(npm run dev:*)",
+      "Bash(node --version:*)",
+      "Bash(nvm list:*)",
+      "Bash(xxd:*)",
+      "Bash(nvm install:*)",
+      "Bash(brew install:*)",
+      "Bash(export PATH=\"/opt/homebrew/opt/node@22/bin:$PATH\")",
+      "Bash(npm:*)",
+      "Bash(export PATH=\"/opt/homebrew/opt/node@22/bin:/usr/bin:/bin:$PATH\")",
+      "Bash(convert:*)"
     ]
   }
 }
