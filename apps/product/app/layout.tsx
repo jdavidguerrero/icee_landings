@@ -1,7 +1,26 @@
 import './css/style.css'
 
 import localFont from 'next/font/local'
+import { Plus_Jakarta_Sans, Outfit, DM_Serif_Display } from 'next/font/google'
 import type { Metadata } from 'next'
+
+// POS demo UI fonts (used inside the interactive demo component)
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+})
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+})
+const dmSerif = DM_Serif_Display({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-dm-serif',
+  display: 'swap',
+})
 
 const aspekta = localFont({
   src: [
@@ -62,7 +81,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es">
-      <body className={`${aspekta.variable} font-aspekta antialiased bg-white text-slate-800 font-[350]`}>
+      <body className={`${aspekta.variable} ${plusJakarta.variable} ${outfit.variable} ${dmSerif.variable} font-aspekta antialiased bg-white text-slate-800 font-[350]`}>
         <div className="flex flex-col min-h-screen overflow-hidden">
           {children}
         </div>

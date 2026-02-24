@@ -5,6 +5,7 @@ export const metadata = {
 
 import Hero from '@/components/hero'
 import Section01 from '@/components/section-01'
+import DemoSection from '@/components/demo-section'
 import Section02 from '@/components/section-02'
 import Section03 from '@/components/section-03'
 import Section04 from '@/components/section-04'
@@ -21,6 +22,7 @@ export default function Home() {
     <>
       <Hero />
       <Section01 />
+      <DemoSection />
       <Section02 />
       <Section03 />
       <Section04 />
