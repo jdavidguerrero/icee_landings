@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDemoState, type DemoScreen } from './hooks/useDemoState'
 import { DEMO_MODIFIERS } from './data/demo-products'
@@ -9,6 +10,7 @@ import ModifiersSheet from './screens/ModifiersSheet'
 import CartScreen from './screens/CartScreen'
 import PaymentNfcScreen from './screens/PaymentNfcScreen'
 import ConfirmationScreen from './screens/ConfirmationScreen'
+import DemoTourBubble from './DemoTourBubble'
 
 // Slide direction based on flow
 const getSlideDir = (screen: DemoScreen) => {
@@ -19,6 +21,7 @@ const getSlideDir = (screen: DemoScreen) => {
 export default function InteractivePosDemo() {
   const demo = useDemoState()
   const { state, cartCount, totals } = demo
+  const [tourActive, setTourActive] = useState(true)
 
   const modifierTotal = DEMO_MODIFIERS
     .filter(m => state.selectedModifiers.includes(m.id))
@@ -83,19 +86,29 @@ export default function InteractivePosDemo() {
   const dir = getSlideDir(state.currentScreen)
 
   return (
-    <DeviceFrame>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.div
-          key={state.currentScreen}
-          className="absolute inset-0"
-          initial={{ x: dir * 40, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: dir * -40, opacity: 0 }}
-          transition={{ duration: 0.28, ease: 'easeInOut' }}
-        >
-          {renderScreen()}
-        </motion.div>
-      </AnimatePresence>
-    </DeviceFrame>
+    <div className="flex flex-col items-center">
+      <DeviceFrame>
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={state.currentScreen}
+            className="absolute inset-0"
+            initial={{ x: dir * 40, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: dir * -40, opacity: 0 }}
+            transition={{ duration: 0.28, ease: 'easeInOut' }}
+          >
+            {renderScreen()}
+          </motion.div>
+        </AnimatePresence>
+      </DeviceFrame>
+
+      {/* Step-by-step tour bubble — appears below device, points up */}
+      {tourActive && (
+        <DemoTourBubble
+          screen={state.currentScreen}
+          onDismiss={() => setTourActive(false)}
+        />
+      )}
+    </div>
   )
 }

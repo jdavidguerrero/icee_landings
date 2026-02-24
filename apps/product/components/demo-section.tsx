@@ -51,7 +51,7 @@ export default function DemoSection() {
               href="#contacto"
               className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0096B7] text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-lg shadow-[#00B4D8]/20"
             >
-              Solicitar mi demo gratis
+              Solicitar prueba en vivo
               <svg width="16" height="12" viewBox="0 0 16 12" fill="none">
                 <path d="M1 6h13M9 1l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -59,27 +59,50 @@ export default function DemoSection() {
           </div>
 
           {/* Right — device */}
-          <div className="flex flex-col items-center lg:items-end gap-4" data-aos="fade-left" data-aos-delay="150">
+          <div className="flex flex-col items-center lg:items-end gap-3" data-aos="fade-left" data-aos-delay="150">
 
-            {/* "Live demo" badge above the device */}
-            <span className="inline-flex items-center gap-2 bg-[#00B4D8]/10 border border-[#00B4D8]/25 rounded-full px-4 py-1.5 text-[11px] font-bold text-[#00B4D8] uppercase tracking-widest select-none">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00B4D8] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00B4D8]" />
-              </span>
-              Demo interactivo
-            </span>
+            {/* Section invite card — appears on scroll via AOS */}
+            <div
+              data-aos="zoom-in"
+              data-aos-delay="300"
+              className="w-[260px] bg-gradient-to-br from-[#00B4D8]/12 to-[#48CAE4]/5 border border-[#00B4D8]/30 rounded-2xl px-5 py-4 select-none"
+              style={{ boxShadow: '0 4px 24px rgba(0,180,216,0.08)' }}
+            >
+              {/* Live indicator row */}
+              <div className="flex items-center gap-2 mb-2">
+                <span className="relative flex h-2.5 w-2.5 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00B4D8] opacity-70" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#00B4D8]" />
+                </span>
+                <span className="text-[10px] font-bold text-[#00B4D8] uppercase tracking-widest">
+                  Demo en vivo
+                </span>
+              </div>
+
+              {/* Invite headline */}
+              <p className="text-white font-bold text-[15px] leading-snug mb-1">
+                ¡Hazlo tú mismo!
+              </p>
+              <p className="text-slate-400 text-xs leading-relaxed">
+                Simula una venta real ahora mismo —<br />sin cuenta ni registro.
+              </p>
+
+              {/* Animated arrow pointing down toward device */}
+              <div className="flex justify-center mt-3">
+                <svg
+                  width="22" height="22" viewBox="0 0 22 22" fill="none"
+                  className="animate-bounce text-[#00B4D8] opacity-70"
+                >
+                  <path d="M11 4v14M5 12l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            </div>
 
             {/* Device + outer glow */}
             <div className="relative">
               <div className="absolute -inset-8 rounded-full bg-[#00B4D8]/5 blur-2xl pointer-events-none" />
               <InteractivePosDemo />
             </div>
-
-            {/* Instruction label below */}
-            <p className="text-slate-500 text-xs text-center lg:text-right" style={{ maxWidth: 280 }}>
-              👆 Toca los productos · agrega modificadores · cobra
-            </p>
 
           </div>
 
