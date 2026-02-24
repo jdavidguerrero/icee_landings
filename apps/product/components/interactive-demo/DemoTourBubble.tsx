@@ -1,44 +1,46 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { type DemoScreen } from './hooks/useDemoState'
 
 interface TourStep {
   paso?: string
   titulo: string
   sub: string
+  isConfirmation?: boolean
 }
 
-const STEPS: Record<DemoScreen, TourStep> = {
-  catalog:      { paso: '1 de 4', titulo: 'Toca un producto',       sub: 'Elige lo que quieres vender' },
-  modifiers:    { paso: '2 de 4', titulo: 'Personaliza tu orden',   sub: 'Agrega extras → toca "Agregar" abajo' },
-  cart:         { paso: '3 de 4', titulo: 'Tu orden está lista',    sub: 'Toca "Cobrar con Tarjeta" para pagar' },
-  payment:      { paso: '4 de 4', titulo: 'Cobra con un toque',     sub: 'NFC, chip o efectivo' },
-  confirmation: {                  titulo: '¡Venta completada!',    sub: 'Así de fácil es Icee POS 🎉' },
+// step 1-5 = active steps, step 6 = confirmation auto-dismiss
+const STEPS: Record<number, TourStep> = {
+  1: { paso: '1 de 5', titulo: 'Toca un producto',         sub: 'Elige lo que quieres cobrar' },
+  2: { paso: '2 de 5', titulo: 'Personaliza tu orden',     sub: 'Agrega extras → toca "Agregar" abajo' },
+  3: { paso: '3 de 5', titulo: '¡Añadido al carrito!',     sub: 'Toca el ícono del carrito 🛒 arriba' },
+  4: { paso: '4 de 5', titulo: 'Tu orden está lista',      sub: 'Toca "Cobrar con Tarjeta" para pagar' },
+  5: { paso: '5 de 5', titulo: 'Cobra con un toque',       sub: 'NFC, chip o efectivo' },
+  6: { titulo: '¡Venta completada!', sub: 'Así de fácil es Icee POS 🎉', isConfirmation: true },
 }
 
 interface Props {
-  screen: DemoScreen
+  step: number
   onDismiss: () => void
 }
 
-export default function DemoTourBubble({ screen, onDismiss }: Props) {
+export default function DemoTourBubble({ step, onDismiss }: Props) {
   const [visible, setVisible] = useState(false)
-  const step = STEPS[screen]
+  const data = STEPS[step] ?? STEPS[1]
 
   // Slide in after screen transition finishes
   useEffect(() => {
     setVisible(false)
     const t = setTimeout(() => setVisible(true), 180)
     return () => clearTimeout(t)
-  }, [screen])
+  }, [step])
 
-  // Auto-dismiss on confirmation
+  // Auto-dismiss on confirmation step
   useEffect(() => {
-    if (screen !== 'confirmation') return
+    if (step !== 6) return
     const t = setTimeout(onDismiss, 2800)
     return () => clearTimeout(t)
-  }, [screen, onDismiss])
+  }, [step, onDismiss])
 
   return (
     <div
@@ -72,7 +74,7 @@ export default function DemoTourBubble({ screen, onDismiss }: Props) {
         backdropFilter: 'blur(10px)',
       }}>
         {/* Step pill */}
-        {step.paso && (
+        {data.paso && (
           <span style={{
             display: 'inline-block',
             background: 'rgba(0,180,216,0.15)',
@@ -87,7 +89,7 @@ export default function DemoTourBubble({ screen, onDismiss }: Props) {
             fontFamily: "'Outfit', sans-serif",
             textTransform: 'uppercase' as const,
           }}>
-            PASO {step.paso}
+            PASO {data.paso}
           </span>
         )}
 
@@ -100,7 +102,7 @@ export default function DemoTourBubble({ screen, onDismiss }: Props) {
           marginBottom: 3,
           lineHeight: 1.3,
         }}>
-          {screen === 'confirmation' ? '🎉 ' : '→ '}{step.titulo}
+          {data.isConfirmation ? '🎉 ' : '→ '}{data.titulo}
         </div>
 
         {/* Sub */}
@@ -110,11 +112,11 @@ export default function DemoTourBubble({ screen, onDismiss }: Props) {
           color: 'rgba(148,163,184,0.9)',
           lineHeight: 1.4,
         }}>
-          {step.sub}
+          {data.sub}
         </div>
 
         {/* Dismiss × */}
-        {screen !== 'confirmation' && (
+        {!data.isConfirmation && (
           <button
             onClick={onDismiss}
             style={{

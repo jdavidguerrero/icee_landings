@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useDemoState, type DemoScreen } from './hooks/useDemoState'
-import { DEMO_MODIFIERS } from './data/demo-products'
+import { DEMO_MODIFIERS, type Product } from './data/demo-products'
 import DeviceFrame from './DeviceFrame'
 import CatalogScreen from './screens/CatalogScreen'
 import ModifiersSheet from './screens/ModifiersSheet'
@@ -21,20 +21,61 @@ const getSlideDir = (screen: DemoScreen) => {
 export default function InteractivePosDemo() {
   const demo = useDemoState()
   const { state, cartCount, totals } = demo
+
+  // Tour state
   const [tourActive, setTourActive] = useState(true)
+  /**
+   * tourStep maps the guided onboarding progress (1–6):
+   *   1 → catalog initial  — "Toca un producto"
+   *   2 → modifiers        — "Personaliza → Toca Agregar"
+   *   3 → catalog post-add — "¡Añadido! → Ve al carrito"
+   *   4 → cart             — "Tu orden → Toca Cobrar"
+   *   5 → payment          — "Cobra con un toque"
+   *   6 → confirmation     — "¡Venta completada!" (auto-dismiss)
+   */
+  const [tourStep, setTourStep] = useState(1)
 
   const modifierTotal = DEMO_MODIFIERS
     .filter(m => state.selectedModifiers.includes(m.id))
     .reduce((s, m) => s + m.price, 0)
 
+  // ── Wrapped handlers that advance tourStep ──────────────────────────────
+  const handleOpenModifiers = useCallback((product: Product) => {
+    demo.openModifiers(product)
+    setTourStep(2)
+  }, [demo])
+
+  const handleAddToCart = useCallback(() => {
+    demo.addToCart(modifierTotal)
+    setTourStep(3)           // back to catalog: now show "Ve al carrito"
+  }, [demo, modifierTotal])
+
+  const handleCartTap = useCallback(() => {
+    demo.openCart()
+    setTourStep(4)
+  }, [demo])
+
+  const handleCheckout = useCallback(() => {
+    demo.startPayment()
+    setTourStep(5)
+  }, [demo])
+
+  const handleConfirmPayment = useCallback(() => {
+    demo.confirmPayment()
+    setTourStep(6)
+  }, [demo])
+
+  // ── Screen renderer ─────────────────────────────────────────────────────
   const renderScreen = () => {
     switch (state.currentScreen) {
       case 'catalog':
         return (
           <CatalogScreen
             cartCount={cartCount}
-            onProductTap={demo.openModifiers}
-            onCartTap={demo.openCart}
+            onProductTap={handleOpenModifiers}
+            onCartTap={handleCartTap}
+            showProductHint={tourActive && tourStep === 1}
+            showCartHint={tourActive && tourStep === 3}
           />
         )
       case 'modifiers':
@@ -45,9 +86,9 @@ export default function InteractivePosDemo() {
             quantity={state.quantity}
             onToggleModifier={demo.toggleModifier}
             onSetQuantity={demo.setQuantity}
-            onAdd={() => demo.addToCart(modifierTotal)}
-            onBack={() => demo.closeCart()}
-            showTourHint={tourActive}
+            onAdd={handleAddToCart}
+            onBack={demo.closeCart}
+            showTourHint={tourActive && tourStep === 2}
           />
         ) : null
       case 'cart':
@@ -59,16 +100,16 @@ export default function InteractivePosDemo() {
             total={totals.total}
             onClose={demo.closeCart}
             onUpdateQty={demo.updateCartQty}
-            onCheckout={demo.startPayment}
+            onCheckout={handleCheckout}
             onAddMore={demo.closeCart}
-            showTourHint={tourActive}
+            showTourHint={tourActive && tourStep === 4}
           />
         )
       case 'payment':
         return (
           <PaymentNfcScreen
             total={totals.total}
-            onConfirm={demo.confirmPayment}
+            onConfirm={handleConfirmPayment}
             onCancel={demo.cancelPayment}
           />
         )
@@ -107,7 +148,7 @@ export default function InteractivePosDemo() {
       {/* Step-by-step tour bubble — appears below device, points up */}
       {tourActive && (
         <DemoTourBubble
-          screen={state.currentScreen}
+          step={tourStep}
           onDismiss={() => setTourActive(false)}
         />
       )}

@@ -7,21 +7,34 @@ interface CatalogScreenProps {
   cartCount: number
   onProductTap: (product: Product) => void
   onCartTap: () => void
+  /** Step 1: show tap-product hint on grid (internal auto-dismiss). Pass false to suppress. */
+  showProductHint?: boolean
+  /** Step 3: show pulsing ring + chip on the cart icon */
+  showCartHint?: boolean
 }
 
-export default function CatalogScreen({ cartCount, onProductTap, onCartTap }: CatalogScreenProps) {
+export default function CatalogScreen({
+  cartCount, onProductTap, onCartTap,
+  showProductHint, showCartHint = false,
+}: CatalogScreenProps) {
   const [activeCategory, setActiveCategory] = useState<Category>('Todo')
   const [search, setSearch] = useState('')
-  const [showHint, setShowHint] = useState(true)
+  const [internalShowHint, setInternalShowHint] = useState(true)
 
-  // Auto-dismiss hint after 4 s
+  // Auto-dismiss product tap hint after 4 s
   useEffect(() => {
-    const t = setTimeout(() => setShowHint(false), 4000)
+    const t = setTimeout(() => setInternalShowHint(false), 4000)
     return () => clearTimeout(t)
   }, [])
 
+  // If showProductHint prop is provided: honour it AND internal auto-dismiss
+  // If not provided: fall back to internal state (backward compat)
+  const showHint = showProductHint !== undefined
+    ? (showProductHint && internalShowHint)
+    : internalShowHint
+
   const handleProductTap = (p: Product) => {
-    setShowHint(false)
+    setInternalShowHint(false)
     onProductTap(p)
   }
 
@@ -33,6 +46,61 @@ export default function CatalogScreen({ cartCount, onProductTap, onCartTap }: Ca
 
   return (
     <div className="bg-[#fafbfd] flex flex-col size-full" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+
+      {/* ── Cart icon hint — step 3 ── */}
+      {showCartHint && (
+        <>
+          <style>{`
+            @keyframes cart-icon-ping {
+              0%   { transform: scale(1);   opacity: 0.85; }
+              100% { transform: scale(1.7); opacity: 0; }
+            }
+            @keyframes cart-chip-bounce {
+              0%, 100% { transform: translateX(-50%) translateY(0px); }
+              50%       { transform: translateX(-50%) translateY(5px); }
+            }
+          `}</style>
+          {/*
+            Cart button position inside 64px header with px-4 py-3:
+              top  = (64 - 40) / 2 = 12px
+              right = 16px (px-4)
+              size  = 40 × 40px (w-10 h-10)
+            Ring div: 4px margin → top:8, right:12, size:48
+          */}
+          <div
+            className="absolute z-30 pointer-events-none"
+            style={{ top: 8, right: 12, width: 48, height: 48 }}
+          >
+            {/* Dual ping rings */}
+            <div className="absolute inset-0 rounded-full border-2 border-[#00b4d8]"
+              style={{ animation: 'cart-icon-ping 1.5s ease-out infinite' }} />
+            <div className="absolute inset-0 rounded-full border-2 border-[#00b4d8]"
+              style={{ animation: 'cart-icon-ping 1.5s ease-out infinite', animationDelay: '0.6s' }} />
+            {/* Chip below cart icon */}
+            <div
+              className="absolute left-1/2 whitespace-nowrap"
+              style={{
+                top: 'calc(100% + 10px)',
+                animation: 'cart-chip-bounce 1.1s ease-in-out infinite',
+                transform: 'translateX(-50%)',
+              }}
+            >
+              <div style={{
+                display: 'flex', alignItems: 'center', gap: 5,
+                background: '#00b4d8',
+                borderRadius: 20,
+                padding: '5px 12px',
+                fontSize: 12, fontWeight: 700, color: '#fff',
+                boxShadow: '0 4px 14px rgba(0,180,216,0.55)',
+                fontFamily: "'Plus Jakarta Sans', sans-serif",
+              }}>
+                <span style={{ fontSize: 14 }}>👆</span>
+                <span>Ve al carrito</span>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
 
       {/* Header */}
       <div className="bg-[#0b2545] flex items-center justify-between px-4 py-3 shadow-md shrink-0" style={{ height: 64 }}>
