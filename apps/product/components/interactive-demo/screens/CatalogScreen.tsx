@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { DEMO_PRODUCTS, CATEGORIES, type Product, type Category } from '../data/demo-products'
 
 interface CatalogScreenProps {
@@ -12,6 +12,18 @@ interface CatalogScreenProps {
 export default function CatalogScreen({ cartCount, onProductTap, onCartTap }: CatalogScreenProps) {
   const [activeCategory, setActiveCategory] = useState<Category>('Todo')
   const [search, setSearch] = useState('')
+  const [showHint, setShowHint] = useState(true)
+
+  // Auto-dismiss hint after 4 s
+  useEffect(() => {
+    const t = setTimeout(() => setShowHint(false), 4000)
+    return () => clearTimeout(t)
+  }, [])
+
+  const handleProductTap = (p: Product) => {
+    setShowHint(false)
+    onProductTap(p)
+  }
 
   const filtered = DEMO_PRODUCTS.filter(p => {
     const matchCat = activeCategory === 'Todo' || p.category === activeCategory
@@ -98,12 +110,75 @@ export default function CatalogScreen({ cartCount, onProductTap, onCartTap }: Ca
       </div>
 
       {/* Product grid — scrollable */}
-      <div className="flex-1 overflow-y-auto px-4 pb-36" style={{ scrollbarWidth: 'none' }}>
+      <div className="flex-1 overflow-y-auto px-4 pb-36 relative" style={{ scrollbarWidth: 'none' }}>
+
+        {/* Tap hint — points at first product, auto-fades after 4 s */}
+        {showHint && (
+          <>
+            <style>{`
+              @keyframes hint-life {
+                0%   { opacity: 0; transform: translateY(6px); }
+                12%  { opacity: 1; transform: translateY(0); }
+                75%  { opacity: 1; }
+                100% { opacity: 0; }
+              }
+              @keyframes tap-pulse {
+                0%, 100% { transform: scale(1) translateY(0); }
+                45%       { transform: scale(0.88) translateY(5px); }
+                65%       { transform: scale(0.93) translateY(3px); }
+              }
+            `}</style>
+            <div
+              className="absolute pointer-events-none z-20"
+              style={{
+                top: 26,
+                left: 24,
+                animation: 'hint-life 4s ease forwards',
+              }}
+            >
+              {/* Ripple rings */}
+              <div className="relative w-16 h-16 flex items-center justify-center">
+                <div className="absolute inset-0 rounded-full bg-[#00b4d8]"
+                  style={{ opacity: 0.18, animation: 'ping 1.4s cubic-bezier(0,0,0.2,1) infinite' }} />
+                <div className="absolute inset-2 rounded-full bg-[#00b4d8]"
+                  style={{ opacity: 0.25, animation: 'ping 1.4s cubic-bezier(0,0,0.2,1) infinite', animationDelay: '0.35s' }} />
+                {/* Finger */}
+                <span
+                  style={{
+                    fontSize: 28,
+                    lineHeight: 1,
+                    animation: 'tap-pulse 1.4s ease-in-out infinite',
+                    filter: 'drop-shadow(0 2px 6px rgba(0,180,216,0.5))',
+                  }}
+                >
+                  👆
+                </span>
+              </div>
+              {/* Label chip */}
+              <div
+                className="absolute mt-1 whitespace-nowrap rounded-full px-2.5 py-1 text-white font-semibold"
+                style={{
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  fontSize: 11,
+                  background: 'rgba(11,37,69,0.92)',
+                  border: '1px solid rgba(0,180,216,0.35)',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  backdropFilter: 'blur(4px)',
+                }}
+              >
+                ¡Tócalo!
+              </div>
+            </div>
+          </>
+        )}
+
         <div className="grid grid-cols-3 gap-2">
           {filtered.map(product => (
             <button
               key={product.id}
-              onClick={() => onProductTap(product)}
+              onClick={() => handleProductTap(product)}
               className="bg-white border border-[#f1f5f9] rounded-2xl p-2 shadow-sm text-left active:scale-95 transition-transform"
             >
               <div className="bg-[#f1f5f9] rounded-xl overflow-hidden mb-2" style={{ height: 88 }}>

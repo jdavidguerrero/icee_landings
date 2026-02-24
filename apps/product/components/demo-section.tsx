@@ -59,12 +59,28 @@ export default function DemoSection() {
           </div>
 
           {/* Right — device */}
-          <div className="flex justify-center lg:justify-end" data-aos="fade-left" data-aos-delay="150">
-            {/* Outer glow ring */}
+          <div className="flex flex-col items-center lg:items-end gap-4" data-aos="fade-left" data-aos-delay="150">
+
+            {/* "Live demo" badge above the device */}
+            <span className="inline-flex items-center gap-2 bg-[#00B4D8]/10 border border-[#00B4D8]/25 rounded-full px-4 py-1.5 text-[11px] font-bold text-[#00B4D8] uppercase tracking-widest select-none">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00B4D8] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00B4D8]" />
+              </span>
+              Demo interactivo
+            </span>
+
+            {/* Device + outer glow */}
             <div className="relative">
               <div className="absolute -inset-8 rounded-full bg-[#00B4D8]/5 blur-2xl pointer-events-none" />
               <InteractivePosDemo />
             </div>
+
+            {/* Instruction label below */}
+            <p className="text-slate-500 text-xs text-center lg:text-right" style={{ maxWidth: 280 }}>
+              👆 Toca los productos · agrega modificadores · cobra
+            </p>
+
           </div>
 
         </div>
