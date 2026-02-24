@@ -47,6 +47,7 @@ export default function InteractivePosDemo() {
             onSetQuantity={demo.setQuantity}
             onAdd={() => demo.addToCart(modifierTotal)}
             onBack={() => demo.closeCart()}
+            showTourHint={tourActive}
           />
         ) : null
       case 'cart':
@@ -60,6 +61,7 @@ export default function InteractivePosDemo() {
             onUpdateQty={demo.updateCartQty}
             onCheckout={demo.startPayment}
             onAddMore={demo.closeCart}
+            showTourHint={tourActive}
           />
         )
       case 'payment':

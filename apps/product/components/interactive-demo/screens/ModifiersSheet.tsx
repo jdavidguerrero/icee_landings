@@ -10,11 +10,13 @@ interface ModifiersSheetProps {
   onSetQuantity: (qty: number) => void
   onAdd: () => void
   onBack: () => void
+  showTourHint?: boolean
 }
 
 export default function ModifiersSheet({
   product, selectedModifiers, quantity,
   onToggleModifier, onSetQuantity, onAdd, onBack,
+  showTourHint = false,
 }: ModifiersSheetProps) {
   const modifierTotal = DEMO_MODIFIERS
     .filter(m => selectedModifiers.includes(m.id))
@@ -132,19 +134,73 @@ export default function ModifiersSheet({
           </div>
 
           {/* Add button */}
-          <button onClick={onAdd}
-            className="w-full h-14 rounded-3xl flex items-center justify-between px-6"
-            style={{
-              background: 'linear-gradient(to right, #00b4d8, #48cae4)',
-              boxShadow: '0 10px 15px -3px rgba(0,178,214,0.25)',
-            }}>
-            <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '0.45px' }}>
-              Agregar
-            </span>
-            <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: '#fff' }}>
-              ${lineTotal.toFixed(2)}
-            </span>
-          </button>
+          <div className="relative">
+            {showTourHint && (
+              <>
+                <style>{`
+                  @keyframes mod-hint-in {
+                    0%   { opacity: 0; transform: translateY(6px); }
+                    15%  { opacity: 1; transform: translateY(0); }
+                    80%  { opacity: 1; }
+                    100% { opacity: 0.8; }
+                  }
+                  @keyframes mod-hint-bounce {
+                    0%, 100% { transform: translateY(0); }
+                    50%       { transform: translateY(5px); }
+                  }
+                  @keyframes mod-btn-glow {
+                    0%, 100% { box-shadow: 0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 0 rgba(0,180,216,0.6); }
+                    50%       { box-shadow: 0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 6px rgba(0,180,216,0); }
+                  }
+                `}</style>
+                {/* Bouncing chip above button */}
+                <div
+                  className="absolute pointer-events-none z-10 w-full flex justify-center"
+                  style={{ bottom: '100%', paddingBottom: 8, animation: 'mod-hint-in 0.4s ease forwards' }}
+                >
+                  <div
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      background: 'rgba(0,180,216,0.15)',
+                      border: '1px solid rgba(0,180,216,0.55)',
+                      borderRadius: 20,
+                      padding: '5px 14px',
+                      animation: 'mod-hint-bounce 1.1s ease-in-out infinite',
+                    }}
+                  >
+                    <span style={{ fontSize: 15, lineHeight: 1 }}>👆</span>
+                    <span style={{
+                      fontFamily: "'Plus Jakarta Sans', sans-serif",
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: '#00b4d8',
+                      letterSpacing: '0.2px',
+                    }}>
+                      ¡Toca Agregar!
+                    </span>
+                  </div>
+                </div>
+              </>
+            )}
+            <button onClick={onAdd}
+              className="w-full h-14 rounded-3xl flex items-center justify-between px-6"
+              style={{
+                background: 'linear-gradient(to right, #00b4d8, #48cae4)',
+                animation: showTourHint ? 'mod-btn-glow 1.5s ease-in-out infinite' : undefined,
+                boxShadow: showTourHint
+                  ? '0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 3px rgba(0,180,216,0.35)'
+                  : '0 10px 15px -3px rgba(0,178,214,0.25)',
+              }}>
+              <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 18, color: '#fff', letterSpacing: '0.45px' }}>
+                Agregar
+              </span>
+              <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: '#fff' }}>
+                ${lineTotal.toFixed(2)}
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

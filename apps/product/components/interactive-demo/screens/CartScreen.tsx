@@ -11,9 +11,10 @@ interface CartScreenProps {
   onUpdateQty: (productId: number, delta: number) => void
   onCheckout: () => void
   onAddMore: () => void
+  showTourHint?: boolean
 }
 
-export default function CartScreen({ cart, subtotal, tax, total, onClose, onUpdateQty, onCheckout, onAddMore }: CartScreenProps) {
+export default function CartScreen({ cart, subtotal, tax, total, onClose, onUpdateQty, onCheckout, onAddMore, showTourHint = false }: CartScreenProps) {
   return (
     <div className="bg-[#fafbfd] flex flex-col size-full" style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
       {/* Header */}
@@ -123,12 +124,64 @@ export default function CartScreen({ cart, subtotal, tax, total, onClose, onUpda
           </div>
         </div>
         <div className="flex flex-col gap-3 px-5 pb-5">
+          {showTourHint && (
+            <>
+              <style>{`
+                @keyframes cart-hint-in {
+                  0%   { opacity: 0; transform: translateY(6px); }
+                  15%  { opacity: 1; transform: translateY(0); }
+                  80%  { opacity: 1; }
+                  100% { opacity: 0.8; }
+                }
+                @keyframes cart-hint-bounce {
+                  0%, 100% { transform: translateY(0); }
+                  50%       { transform: translateY(5px); }
+                }
+                @keyframes cart-btn-glow {
+                  0%, 100% { box-shadow: 0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 0 rgba(0,180,216,0.6); }
+                  50%       { box-shadow: 0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 6px rgba(0,180,216,0); }
+                }
+              `}</style>
+              {/* Hint chip above button */}
+              <div
+                className="pointer-events-none flex justify-center -mb-1"
+                style={{ animation: 'cart-hint-in 0.4s ease forwards' }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 6,
+                    background: 'rgba(0,180,216,0.15)',
+                    border: '1px solid rgba(0,180,216,0.55)',
+                    borderRadius: 20,
+                    padding: '5px 14px',
+                    animation: 'cart-hint-bounce 1.1s ease-in-out infinite',
+                  }}
+                >
+                  <span style={{ fontSize: 15, lineHeight: 1 }}>👆</span>
+                  <span style={{
+                    fontFamily: "'Plus Jakarta Sans', sans-serif",
+                    fontSize: 13,
+                    fontWeight: 700,
+                    color: '#00b4d8',
+                    letterSpacing: '0.2px',
+                  }}>
+                    ¡Toca Cobrar!
+                  </span>
+                </div>
+              </div>
+            </>
+          )}
           <button onClick={onCheckout}
             className="h-13 rounded-2xl flex items-center justify-between px-6"
             style={{
               height: 52,
               background: 'linear-gradient(to right, #00b2d6, #00c4ec)',
-              boxShadow: '0 10px 15px -3px rgba(0,178,214,0.25)',
+              animation: showTourHint ? 'cart-btn-glow 1.5s ease-in-out infinite' : undefined,
+              boxShadow: showTourHint
+                ? '0 10px 15px -3px rgba(0,178,214,0.25), 0 0 0 3px rgba(0,180,216,0.35)'
+                : '0 10px 15px -3px rgba(0,178,214,0.25)',
             }}>
             <span style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: 18, color: '#fff' }}>
               Cobrar con Tarjeta

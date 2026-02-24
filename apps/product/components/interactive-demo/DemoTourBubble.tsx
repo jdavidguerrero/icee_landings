@@ -11,8 +11,8 @@ interface TourStep {
 
 const STEPS: Record<DemoScreen, TourStep> = {
   catalog:      { paso: '1 de 4', titulo: 'Toca un producto',       sub: 'Elige lo que quieres vender' },
-  modifiers:    { paso: '2 de 4', titulo: 'Personaliza tu orden',   sub: 'Agrega extras o ajusta la cantidad' },
-  cart:         { paso: '3 de 4', titulo: 'Revisa antes de cobrar', sub: 'Confirma los totales y elige cómo pagar' },
+  modifiers:    { paso: '2 de 4', titulo: 'Personaliza tu orden',   sub: 'Agrega extras → toca "Agregar" abajo' },
+  cart:         { paso: '3 de 4', titulo: 'Tu orden está lista',    sub: 'Toca "Cobrar con Tarjeta" para pagar' },
   payment:      { paso: '4 de 4', titulo: 'Cobra con un toque',     sub: 'NFC, chip o efectivo' },
   confirmation: {                  titulo: '¡Venta completada!',    sub: 'Así de fácil es Icee POS 🎉' },
 }
