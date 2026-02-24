@@ -59,7 +59,7 @@ export default function DemoSection() {
           </div>
 
           {/* Right — device */}
-          <div className="flex flex-col items-center lg:items-end gap-3" data-aos="fade-left" data-aos-delay="150">
+          <div className="flex flex-col items-center lg:items-end gap-8" data-aos="fade-left" data-aos-delay="150">
 
             {/* Section invite card — appears on scroll via AOS */}
             <div
