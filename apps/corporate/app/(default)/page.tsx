@@ -3,7 +3,6 @@ import PciTrustBar from '@/components/pci-trust-bar'
 import Stats from '@/components/stats'
 import FeaturesBlocks from '@/components/features-blocks'
 import FeaturedProduct from '@/components/featured-product'
-import PresenceSection from '@/components/presence-section'
 import TestimonialsSection from '@/components/testimonials-section'
 import ClientsLogosSection from '@/components/clients-logos-section'
 import Clients from '@/components/clients'
@@ -17,7 +16,6 @@ export default function Home() {
       <Stats />
       <FeaturesBlocks />
       <FeaturedProduct />
-      <PresenceSection />
       <TestimonialsSection />
       <ClientsLogosSection />
       <Clients />

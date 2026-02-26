@@ -1,4 +1,11 @@
 import Link from 'next/link'
+import Image from 'next/image'
+
+const subsidiaries = [
+  { src: '/images/logos/icee-colombia.png', alt: 'Icee Electronics Colombia', label: 'Colombia' },
+  { src: '/images/logos/icee-ecuador.png',  alt: 'Icee Electronics Ecuador',  label: 'Ecuador'  },
+  { src: '/images/logos/icee-usa.png',      alt: 'Icee Electronics USA',      label: 'USA'      },
+]
 
 export default function HeroHome() {
   return (
@@ -85,6 +92,29 @@ export default function HeroHome() {
             >
               Hablar con un Experto
             </Link>
+          </div>
+
+          {/* Subsidiary logos */}
+          <div
+            className="mt-10 flex flex-wrap items-center justify-center gap-3"
+            data-aos="fade-up"
+            data-aos-delay="240"
+          >
+            <span className="text-xs text-slate-500 uppercase tracking-widest mr-1">Presencia en</span>
+            {subsidiaries.map(({ src, alt, label }) => (
+              <div
+                key={label}
+                className="flex items-center gap-2 bg-white/95 rounded-xl px-3 py-2 shadow-sm"
+              >
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={80}
+                  height={28}
+                  className="object-contain h-[24px] w-auto"
+                />
+              </div>
+            ))}
           </div>
 
         </div>

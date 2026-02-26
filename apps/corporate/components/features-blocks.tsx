@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRef, useState, useEffect, useCallback } from 'react'
 
 /* ─────────────────────── Types ─────────────────────── */
@@ -12,6 +13,7 @@ interface Slide {
   title: string
   description: string
   tag: string
+  href: string
   bg: { type: BgType; src: string }
 }
 
@@ -59,6 +61,23 @@ function IconRobot() {
   )
 }
 
+function IconEach() {
+  return (
+    <svg className="w-10 h-10" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect width="40" height="40" rx="10" fill="rgba(0,180,216,0.15)" />
+      {/* Capsule/building outline */}
+      <rect x="12" y="18" width="16" height="12" rx="3" stroke="#00B4D8" strokeWidth="1.5" />
+      {/* Roof/arch */}
+      <path d="M12 21a8 8 0 0116 0" stroke="#00B4D8" strokeWidth="1.5" strokeLinecap="round" />
+      {/* Door */}
+      <rect x="18" y="24" width="4" height="6" rx="1" stroke="#48CAE4" strokeWidth="1.5" />
+      {/* Window */}
+      <rect x="14" y="22" width="3" height="3" rx="0.5" stroke="#48CAE4" strokeWidth="1.2" />
+      <rect x="23" y="22" width="3" height="3" rx="0.5" stroke="#48CAE4" strokeWidth="1.2" />
+    </svg>
+  )
+}
+
 /* ─────────────────────── Slides data ─────────────────────── */
 const slides: Slide[] = [
   {
@@ -67,6 +86,7 @@ const slides: Slide[] = [
     title: 'Comercialización de Partes y Piezas',
     description: 'Venta al por mayor y al detal de repuestos y dispositivos electrónicos para el sector financiero y empresarial.',
     tag: 'Distribución',
+    href: '/productos',
     bg: { type: 'image', src: '/images/lineas-negocio.png' },
   },
   {
@@ -75,6 +95,7 @@ const slides: Slide[] = [
     title: 'Mantenimiento y Reparación Especializada',
     description: 'Reparación correctiva y preventiva de dispositivos electrónicos. Más de 120,000 procesos históricos bajo estándares PCI-DSS.',
     tag: '+120K procesos',
+    href: '/mantenimiento',
     bg: { type: 'video', src: '/videos/icee_video_lab2.mp4' },
   },
   {
@@ -83,6 +104,7 @@ const slides: Slide[] = [
     title: 'Desarrollo de Software',
     description: 'Software integrado y plataformas POS para el sector financiero. Soluciones a medida para negocios en Colombia, Ecuador y USA.',
     tag: 'Tecnología propia',
+    href: '/software',
     bg: { type: 'image', src: '/images/section-bg-1.png' },
   },
   {
@@ -91,7 +113,17 @@ const slides: Slide[] = [
     title: 'Soluciones de Transformación Robótica (STR-IA)',
     description: 'Renting y venta de soluciones robóticas con inteligencia artificial para la transformación empresarial y automatización de procesos.',
     tag: 'STR-IA',
+    href: '/str-ia',
     bg: { type: 'video', src: '/videos/icee_robot.mp4' },
+  },
+  {
+    id: 'each',
+    icon: <IconEach />,
+    title: 'Ecosistema Autónomo de Cápsulas Habitacionales',
+    description: 'Soluciones modulares de arquitectura sostenible para comunidades, hospitalidad e innovación. Vivir y trabajar diferente.',
+    tag: 'EACH',
+    href: '/each',
+    bg: { type: 'image', src: '/images/section-bg-1.png' },
   },
 ]
 
@@ -147,8 +179,6 @@ export default function FeaturesBlocks() {
     timerRef.current = setTimeout(next, 5500)
     return () => { if (timerRef.current) clearTimeout(timerRef.current) }
   }, [current, isPaused, next])
-
-  const slide = slides[current]
 
   return (
     <section id="lineas-negocio" className="bg-[#060F1E]">
@@ -210,9 +240,20 @@ export default function FeaturesBlocks() {
               </h3>
 
               {/* Description */}
-              <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed mb-6">
+              <p className="text-base sm:text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
                 {s.description}
               </p>
+
+              {/* CTA link */}
+              <Link
+                href={s.href}
+                className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#00B4D8]/20 hover:bg-[#00B4D8]/35 border border-[#00B4D8]/40 rounded-full px-5 py-2.5 transition-all duration-200 backdrop-blur-sm group"
+              >
+                Ver más
+                <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-150" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
 
             </div>
           </div>
@@ -263,7 +304,7 @@ export default function FeaturesBlocks() {
         </div>
 
         {/* Thumbnail strip */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 sm:gap-3">
           {slides.map((s, i) => (
             <button
               key={s.id}

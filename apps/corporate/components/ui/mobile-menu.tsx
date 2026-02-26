@@ -78,7 +78,7 @@ export default function MobileMenu() {
           <ul className="px-5 py-2">
             <li>
               <Link
-                href="#lineas-negocio"
+                href="/#lineas-negocio"
                 className="flex font-medium text-slate-800 hover:text-[#00B4D8] py-2"
                 onClick={() => setMobileNavOpen(false)}
               >
@@ -87,11 +87,20 @@ export default function MobileMenu() {
             </li>
             <li>
               <Link
-                href="#aliados"
+                href="/productos"
                 className="flex font-medium text-slate-800 hover:text-[#00B4D8] py-2"
                 onClick={() => setMobileNavOpen(false)}
               >
-                Aliados
+                Productos
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/str-ia"
+                className="flex font-medium text-slate-800 hover:text-[#00B4D8] py-2"
+                onClick={() => setMobileNavOpen(false)}
+              >
+                STR-IA
               </Link>
             </li>
             <li>

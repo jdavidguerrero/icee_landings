@@ -31,18 +31,26 @@ export default function Header({ mode = 'dark' }: {
             <ul className="flex grow justify-start flex-wrap items-center">
               <li>
                 <Link
-                  href="#lineas-negocio"
-                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  href="/#lineas-negocio"
+                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-4 py-2 flex items-center transition duration-150 ease-in-out"
                 >
                   Soluciones
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#aliados"
-                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  href="/productos"
+                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-4 py-2 flex items-center transition duration-150 ease-in-out"
                 >
-                  Aliados
+                  Productos
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/str-ia"
+                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-4 py-2 flex items-center transition duration-150 ease-in-out"
+                >
+                  STR-IA
                 </Link>
               </li>
               <li>
@@ -50,7 +58,7 @@ export default function Header({ mode = 'dark' }: {
                   href="https://pos.iceeelectronics.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-4 py-2 flex items-center transition duration-150 ease-in-out"
                 >
                   Icee POS
                 </Link>
@@ -60,7 +68,7 @@ export default function Header({ mode = 'dark' }: {
                   href="https://wa.me/573104527042?text=Hola%2C%20me%20interesa%20Icee%20Electronics"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                  className="font-medium text-slate-800 hover:text-[#00B4D8] dark:text-slate-400 dark:hover:text-[#00B4D8] px-3 lg:px-4 py-2 flex items-center transition duration-150 ease-in-out"
                 >
                   Contacto
                 </Link>
