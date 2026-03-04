@@ -60,7 +60,8 @@
       "WebFetch(domain:web.archive.org)",
       "WebFetch(domain:www.spectratech.com)",
       "WebFetch(domain:empresas.portafolio.co)",
-      "WebFetch(domain:static.parastorage.com)"
+      "WebFetch(domain:static.parastorage.com)",
+      "Bash(git check-ignore -v apps/corporate/public/videos/icee_pos_2.mp4)"
     ]
   }
 }

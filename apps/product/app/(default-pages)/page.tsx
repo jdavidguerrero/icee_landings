@@ -13,6 +13,7 @@ import Section05 from '@/components/section-05'
 import Section06 from '@/components/section-06'
 import SectionT2 from '@/components/section-t2'
 import TestimonialsSection from '@/components/testimonials-section'
+import PciTrustSection from '@/components/pci-trust-section'
 import Section07 from '@/components/section-07'
 import Faqs from '@/components/faqs'
 import Cta from '@/components/cta'
@@ -30,6 +31,7 @@ export default function Home() {
       <Section06 />
       <SectionT2 />
       <TestimonialsSection />
+      <PciTrustSection />
       <Section07 />
       <Faqs />
       <Cta />
