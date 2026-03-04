@@ -21,11 +21,10 @@ apps/product/.turbo/
 *.avi
 packages/assets/
 
-# Corporate videos are large (13–45 MB) — CDN only
-apps/corporate/public/videos/
-
-# Product videos — small (≤2 MB), commit for Vercel deployment
-# Exclude all mp4s globally, then re-include the small product ones
+# Exclude all mp4s globally...
 *.mp4
+
+# ...then re-include the small ones needed for Vercel (≤2 MB each)
 !apps/product/public/videos/icee_pos_1.mp4
 !apps/product/public/videos/icee_pos_2.mp4
+!apps/corporate/public/videos/icee_pos_2.mp4
