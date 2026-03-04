@@ -16,10 +16,16 @@ apps/product/.next/
 apps/product/.turbo/
 
 # Large binary assets — serve from CDN, not git
-*.mp4
 *.mov
 *.webm
 *.avi
 packages/assets/
+
+# Corporate videos are large (13–45 MB) — CDN only
 apps/corporate/public/videos/
-apps/product/public/videos/
+
+# Product videos — small (≤2 MB), commit for Vercel deployment
+# Exclude all mp4s globally, then re-include the small product ones
+*.mp4
+!apps/product/public/videos/icee_pos_1.mp4
+!apps/product/public/videos/icee_pos_2.mp4
