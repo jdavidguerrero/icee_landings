@@ -100,18 +100,17 @@ export default function HeroHome() {
             data-aos="fade-up"
             data-aos-delay="240"
           >
-            <span className="text-xs text-slate-500 uppercase tracking-widest mr-1">Presencia en</span>
             {subsidiaries.map(({ src, alt, label }) => (
               <div
                 key={label}
-                className="flex items-center gap-2 bg-white/95 rounded-xl px-3 py-2 shadow-sm"
+                className="flex items-center gap-2 bg-white/95 rounded-xl px-4 py-2.5 shadow-sm"
               >
                 <Image
                   src={src}
                   alt={alt}
-                  width={80}
-                  height={28}
-                  className="object-contain h-[24px] w-auto"
+                  width={100}
+                  height={36}
+                  className="object-contain h-[34px] w-auto"
                 />
               </div>
             ))}

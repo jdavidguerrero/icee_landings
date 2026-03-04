@@ -44,7 +44,23 @@
       "Bash(export PATH=\"/opt/homebrew/opt/node@22/bin:$PATH\")",
       "Bash(npm:*)",
       "Bash(export PATH=\"/opt/homebrew/opt/node@22/bin:/usr/bin:/bin:$PATH\")",
-      "Bash(convert:*)"
+      "Bash(convert:*)",
+      "Bash(done)",
+      "WebFetch(domain:www.wixapis.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:editor.wix.com)",
+      "WebFetch(domain:www.wix.com)",
+      "WebFetch(domain:www.lasempresas.com.co)",
+      "WebFetch(domain:www.importgenius.com)",
+      "WebFetch(domain:www.informacolombia.com)",
+      "WebFetch(domain:www.trademo.com)",
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:iceeelectronics.com)",
+      "WebFetch(domain:www.zoominfo.com)",
+      "WebFetch(domain:web.archive.org)",
+      "WebFetch(domain:www.spectratech.com)",
+      "WebFetch(domain:empresas.portafolio.co)",
+      "WebFetch(domain:static.parastorage.com)"
     ]
   }
 }

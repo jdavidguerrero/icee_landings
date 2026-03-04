@@ -4,6 +4,7 @@ export const metadata = {
 }
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 const robots = [
   {
@@ -15,6 +16,7 @@ const robots = [
     modality: ['Renting mensual', 'Venta directa'],
     badge: 'Más vendido',
     badgeColor: 'text-[#00B4D8] bg-[#00B4D8]/10 border-[#00B4D8]/30',
+    image: '/images/robots/iceebot-t10.png',
   },
   {
     id: 'W3',
@@ -25,6 +27,7 @@ const robots = [
     modality: ['Renting mensual', 'Venta directa'],
     badge: 'Hospitalidad',
     badgeColor: 'text-slate-400 bg-slate-800/60 border-slate-700',
+    image: '/images/robots/iceebot-w3.png',
   },
   {
     id: 'S100',
@@ -35,6 +38,7 @@ const robots = [
     modality: ['Renting mensual', 'Venta directa'],
     badge: 'Seguridad',
     badgeColor: 'text-slate-400 bg-slate-800/60 border-slate-700',
+    image: '/images/robots/iceebot-s100.png',
   },
   {
     id: 'C30',
@@ -45,6 +49,7 @@ const robots = [
     modality: ['Renting mensual', 'Venta directa'],
     badge: 'Industrial',
     badgeColor: 'text-slate-400 bg-slate-800/60 border-slate-700',
+    image: '/images/robots/iceebot-c30.png',
   },
   {
     id: 'C20',
@@ -55,6 +60,7 @@ const robots = [
     modality: ['Renting mensual', 'Venta directa'],
     badge: 'Compacto',
     badgeColor: 'text-slate-400 bg-slate-800/60 border-slate-700',
+    image: '/images/robots/iceebot-c20.png',
   },
 ]
 
@@ -74,7 +80,7 @@ export default function StrIaPage() {
     <div className="bg-[#060F1E] min-h-screen">
 
       {/* ── Hero ── */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden">
+      <section className="relative pt-32 pb-0 md:pt-40 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-[#00B4D8]/5 blur-3xl pointer-events-none" />
         <div
           className="absolute inset-0 pointer-events-none opacity-30"
@@ -83,34 +89,73 @@ export default function StrIaPage() {
             backgroundSize: '32px 32px',
           }}
         />
-        <div className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <Link href="/#lineas-negocio" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-[#00B4D8] mb-6 transition-colors">
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
-            Volver al inicio
-          </Link>
-          <span className="inline-block text-xs font-semibold text-[#00B4D8] uppercase tracking-widest mb-4 bg-[#00B4D8]/10 border border-[#00B4D8]/30 rounded-full px-3 py-1">
-            STR-IA · Soluciones de Transformación Robótica
-          </span>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight font-playfair-display">
-            Robots con Inteligencia<br className="hidden md:block" /> Artificial para tu Negocio
-          </h1>
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed mb-8">
-            Automatiza tareas repetitivas, mejora la experiencia de tus clientes y reduce costos operativos
-            con nuestra línea IceeBot. Disponibles en renting mensual o venta directa.
-          </p>
-          <a
-            href="https://wa.me/573104527042?text=Hola%2C%20me%20interesan%20las%20soluciones%20STR-IA%20de%20IceeBot"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0096B7] text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-lg shadow-[#00B4D8]/20"
-          >
-            Solicitar demostración
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6">
+          {/* Back link */}
+          <div className="text-center mb-6">
+            <Link href="/#lineas-negocio" className="inline-flex items-center gap-1.5 text-xs text-slate-500 hover:text-[#00B4D8] transition-colors">
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+              </svg>
+              Volver al inicio
+            </Link>
+          </div>
+
+          {/* Two-column layout: text left, video right */}
+          <div className="grid md:grid-cols-2 gap-10 items-center pb-16 md:pb-20">
+            {/* Text */}
+            <div>
+              <span className="inline-block text-xs font-semibold text-[#00B4D8] uppercase tracking-widest mb-4 bg-[#00B4D8]/10 border border-[#00B4D8]/30 rounded-full px-3 py-1">
+                STR-IA · Soluciones de Transformación Robótica
+              </span>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight font-playfair-display">
+                Robots con IA para tu Negocio
+              </h1>
+              <p className="text-lg text-slate-400 leading-relaxed mb-8">
+                Automatiza tareas repetitivas, mejora la experiencia de tus clientes y reduce costos operativos
+                con nuestra línea IceeBot — disponibles en renting mensual o venta directa.
+              </p>
+              <div className="flex flex-wrap gap-3 items-center">
+                <a
+                  href="https://wa.me/573104527042?text=Hola%2C%20me%20interesan%20las%20soluciones%20STR-IA%20de%20IceeBot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#00B4D8] hover:bg-[#0096B7] text-white font-semibold px-6 py-3 rounded-xl transition-colors shadow-lg shadow-[#00B4D8]/20"
+                >
+                  Solicitar demostración
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+                {/* Powered by Keenon */}
+                <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
+                  <span className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">By</span>
+                  <Image
+                    src="/images/partners/keenon.png"
+                    alt="Keenon Robotics"
+                    width={70}
+                    height={24}
+                    className="object-contain h-[20px] w-auto"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Video */}
+            <div className="relative rounded-2xl overflow-hidden border border-slate-700/50 shadow-2xl shadow-[#00B4D8]/10 aspect-video bg-[#0A1628]">
+              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-label="IceeBot robots en acción"
+              >
+                <source src="/videos/icee_robot.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#060F1E]/40 to-transparent pointer-events-none" />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -125,14 +170,26 @@ export default function StrIaPage() {
           </p>
 
           <div className="space-y-6">
-            {robots.map(({ id, name, role, description, features, modality, badge, badgeColor }) => (
+            {robots.map(({ id, name, role, description, features, modality, badge, badgeColor, image }) => (
               <div
                 key={id}
                 className="bg-[#0A1628] border border-slate-800/70 rounded-2xl p-6 md:p-8 hover:border-[#00B4D8]/30 transition-colors duration-200"
               >
                 <div className="flex flex-col md:flex-row md:items-start gap-6">
-                  {/* Left */}
-                  <div className="flex-1">
+
+                  {/* Robot image */}
+                  <div className="shrink-0 flex items-center justify-center md:w-44 bg-[#060F1E]/60 rounded-xl overflow-hidden border border-slate-800/50 p-3 h-48 md:h-auto">
+                    <Image
+                      src={image}
+                      alt={name}
+                      width={160}
+                      height={200}
+                      className="object-contain h-full w-auto max-h-44"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-3">
                       <span className="text-2xl font-bold font-playfair-display text-[#00B4D8]">{id}</span>
                       <span className={`text-[10px] font-bold uppercase tracking-widest border rounded-full px-2 py-0.5 ${badgeColor}`}>
@@ -152,8 +209,8 @@ export default function StrIaPage() {
                     </div>
                   </div>
 
-                  {/* Right — features */}
-                  <div className="md:w-64 shrink-0">
+                  {/* Features */}
+                  <div className="md:w-56 shrink-0">
                     <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">Características</p>
                     <ul className="space-y-2">
                       {features.map((f) => (
