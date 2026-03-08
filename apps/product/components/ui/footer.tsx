@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom area */}
-        <div className="pb-4 md:pb-8">
+        <div className="pb-4 md:pb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
           <div className="text-xs text-slate-500">
             © 2026 Icee POS · Producto de{' '}
             <a
@@ -95,6 +95,14 @@ export default function Footer() {
             >
               Icee Electronics S.A.S
             </a>
+          </div>
+          <div className="flex items-center gap-4 text-xs text-slate-500">
+            <Link href="/privacidad" className="hover:text-[#00B4D8] transition duration-150 ease-in-out">
+              Política de Privacidad
+            </Link>
+            <Link href="/terminos" className="hover:text-[#00B4D8] transition duration-150 ease-in-out">
+              Términos de Uso
+            </Link>
           </div>
         </div>
       </div>
