@@ -82,7 +82,7 @@ export default function Cta() {
                 Te contactaremos en menos de 24 horas. Si prefieres, escríbenos directamente por WhatsApp.
               </p>
               <a
-                href="https://wa.me/573104527042?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
+                href="https://wa.me/17863860989?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex items-center gap-2 btn-sm text-white bg-green-600 hover:bg-green-700"
@@ -182,7 +182,7 @@ export default function Cta() {
               <div className="mt-6 text-center">
                 <p className="text-slate-500 text-sm mb-2">¿Prefieres hablar directamente?</p>
                 <a
-                  href="https://wa.me/573104527042?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
+                  href="https://wa.me/17863860989?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-medium transition-colors duration-150"

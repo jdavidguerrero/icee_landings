@@ -12,7 +12,7 @@ const solutions = [
     description: 'Sistema de punto de venta para negocios hispanos en EE.UU. y Latinoamérica. Cobra con tarjeta, efectivo o NFC, imprime recibos y gestiona tu inventario — todo en español.',
     badge: 'Producto propio',
     badgeColor: 'text-[#00B4D8] bg-[#00B4D8]/10 border-[#00B4D8]/30',
-    cta: { label: 'Ver demo en vivo', href: 'https://pos.iceeelectronics.com', external: true },
+    cta: { label: 'Ver demo en vivo', href: 'https://iceepos.com', external: true },
   },
   {
     icon: '🔗',
@@ -62,7 +62,7 @@ const demos = [
     description: 'Prueba el flujo completo de venta en tu browser: agrega productos, personaliza la orden y completa el cobro.',
     status: 'Disponible ahora',
     statusColor: 'text-emerald-400',
-    href: 'https://pos.iceeelectronics.com',
+    href: 'https://iceepos.com',
     external: true,
   },
   {

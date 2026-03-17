@@ -15,9 +15,9 @@ export default function Footer() {
           <div className="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
             <Link className="block mb-3" href="/" aria-label="Icee POS">
               <Image
-                src="/images/logos/icee-white.png"
-                width={100}
-                height={34}
+                src="/images/logos/iceepos-white.png"
+                width={120}
+                height={40}
                 style={{ height: 'auto' }}
                 alt="Icee POS logo"
               />
@@ -71,7 +71,7 @@ export default function Footer() {
               <li>
                 <a
                   className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out"
-                  href="https://wa.me/573104527042?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
+                  href="https://wa.me/17863860989?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

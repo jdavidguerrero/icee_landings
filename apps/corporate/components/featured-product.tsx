@@ -33,7 +33,7 @@ export default function FeaturedProduct() {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
                   <Link
                     className="btn text-white bg-[#00B4D8] hover:bg-[#0096B7] group"
-                    href="https://pos.iceeelectronics.com"
+                    href="https://iceepos.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

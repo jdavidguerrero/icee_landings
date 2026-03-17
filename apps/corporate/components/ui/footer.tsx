@@ -113,7 +113,7 @@ export default function Footer() {
             <ul className="text-sm font-medium space-y-2">
               <li>
                 <a
-                  href="https://pos.iceeelectronics.com"
+                  href="https://iceepos.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out"

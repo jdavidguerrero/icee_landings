@@ -11,9 +11,9 @@ export default function Header() {
           <div className="shrink-0 mr-4">
             <Link className="block" href="/" aria-label="Icee POS">
               <Image
-                src="/images/logos/icee-white.png"
-                width={120}
-                height={40}
+                src="/images/logos/iceepos-white.png"
+                width={140}
+                height={47}
                 style={{ height: 'auto' }}
                 alt="Icee POS logo"
                 priority
@@ -27,7 +27,7 @@ export default function Header() {
               <li className="ml-3">
                 <a
                   className="btn-sm inline-flex items-center gap-2 text-white bg-[#25D366] hover:bg-[#1ebe5a] font-semibold shadow-xs shadow-[#25D366]/20"
-                  href="https://wa.me/573104527042?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
+                  href="https://wa.me/17863860989?text=Hola%2C%20quiero%20una%20demo%20de%20Icee%20POS"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

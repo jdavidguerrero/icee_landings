@@ -1,128 +1,114 @@
-export const metadata = {
-  title: 'Términos de Uso — Icee POS',
-  description: 'Términos y condiciones de uso de la plataforma Icee POS, producto de Icee Electronics S.A.S.',
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Términos de Uso | Icee POS',
+  description: 'Términos y condiciones de uso del servicio Icee POS.',
 }
 
-export default function TermsPage() {
+export default function TerminosPage() {
   return (
-    <section className="relative">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-24 md:py-32">
+    <section className="relative bg-[#060F1E] min-h-screen">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 py-20">
+        <div className="prose prose-invert prose-slate max-w-none">
+          <h1>Términos de Uso</h1>
+          <p className="text-slate-400 text-sm">Última actualización: marzo 2026</p>
 
-        {/* Header */}
-        <div className="mb-12">
-          <span className="inline-block text-xs font-semibold text-[#00B4D8] uppercase tracking-widest mb-4">
-            Legal
-          </span>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Términos de Uso
-          </h1>
-          <p className="text-slate-400 text-sm">
-            Última actualización: 8 de marzo de 2026
-          </p>
-        </div>
-
-        {/* Content */}
-        <div className="prose prose-invert prose-slate max-w-none prose-headings:text-white prose-headings:font-bold prose-p:text-slate-400 prose-p:leading-relaxed prose-li:text-slate-400 prose-strong:text-slate-200 prose-a:text-[#00B4D8]">
-
+          <h2>1. Aceptación de los términos</h2>
           <p>
-            Estos Términos de Uso regulan el acceso y uso de la plataforma <strong>Icee POS</strong>,
-            desarrollada y operada por <strong>Icee Electronics S.A.S.</strong> (NIT: en trámite de actualización),
-            empresa legalmente constituida en Colombia con presencia en Ecuador y Estados Unidos.
+            Al acceder o utilizar la plataforma Icee POS (el "Servicio"), usted acepta quedar vinculado por
+            estos Términos de Uso. Si no está de acuerdo con alguna parte de los términos, no podrá acceder
+            al Servicio. El Servicio es proporcionado por Icee Electronics S.A.S.
           </p>
 
+          <h2>2. Descripción del servicio</h2>
           <p>
-            Al activar su cuenta o usar la plataforma Icee POS, usted acepta estos términos en su totalidad.
-            Si no está de acuerdo, no utilice el servicio.
+            Icee POS es una plataforma de punto de venta (POS) diseñada para negocios hispanos en los
+            Estados Unidos. El Servicio incluye hardware terminal, software POS en español, procesamiento
+            de pagos con tarjeta, modo offline, e impresión de recibos.
           </p>
 
-          <h2>1. Descripción del servicio</h2>
-          <p>
-            Icee POS es una plataforma de punto de venta (POS) diseñada para negocios hispanos en Estados Unidos.
-            Incluye software de gestión de ventas, procesamiento de pagos con tarjeta, impresión de recibos,
-            reportes de ventas y modo de operación sin conexión a internet.
-          </p>
-
-          <h2>2. Requisitos para usar el servicio</h2>
+          <h2>3. Requisitos para usar el servicio</h2>
           <ul>
-            <li>Ser mayor de 18 años o representante legal de un negocio.</li>
+            <li>Tener al menos 18 años de edad.</li>
+            <li>Operar un negocio legalmente constituido en los Estados Unidos.</li>
             <li>Proporcionar información veraz y actualizada al registrarse.</li>
-            <li>Contar con un negocio legalmente establecido en los estados donde opera.</li>
-            <li>Aceptar los términos del procesador de pagos asociado.</li>
+            <li>Mantener la seguridad de sus credenciales de acceso.</li>
           </ul>
 
-          <h2>3. Planes y pagos</h2>
+          <h2>4. Planes y pagos</h2>
           <p>
-            Icee POS se ofrece bajo suscripción mensual. Los planes vigentes y sus precios se publican en{' '}
-            <a href="https://iceepos.com/#precios">iceepos.com/#precios</a>. Los precios están expresados en
-            dólares estadounidenses (USD) e incluyen:
+            El Servicio se ofrece bajo planes de suscripción mensual. Los precios están expresados en
+            dólares estadounidenses (USD) e incluyen el acceso al software y soporte técnico básico.
+            El hardware puede adquirirse por separado o bajo esquema de financiamiento.
           </p>
           <ul>
-            <li>Acceso al software POS en el terminal asignado.</li>
-            <li>Actualizaciones de software durante la vigencia del plan.</li>
-            <li>Soporte técnico básico por WhatsApp en horario de atención.</li>
+            <li><strong>Plan Básico:</strong> $29/mes — hasta 50 productos, reportes básicos.</li>
+            <li><strong>Plan Pro:</strong> $49/mes — productos ilimitados, reportes avanzados, modo offline.</li>
           </ul>
           <p>
-            El hardware puede adquirirse por compra directa o bajo modalidad de financiamiento mensual,
-            según el plan seleccionado.
+            Los cargos se realizan de forma mensual a la tarjeta o cuenta bancaria registrada. Los precios
+            pueden cambiar con 30 días de notificación previa.
           </p>
 
-          <h2>4. Cancelación</h2>
+          <h2>5. Cancelación</h2>
           <p>
-            No existen contratos de permanencia obligatoria. Puede cancelar su suscripción en cualquier
-            momento sin penalidad, con efecto al final del período de facturación en curso. El hardware
-            financiado debe devolverse o liquidarse según las condiciones del acuerdo de financiamiento firmado.
+            Puede cancelar su suscripción en cualquier momento sin penalidad. La cancelación será efectiva
+            al final del período de facturación actual. No se realizan reembolsos por períodos parciales.
+            En caso de financiamiento de hardware, aplican los términos del contrato de financiamiento.
           </p>
 
-          <h2>5. Procesamiento de pagos</h2>
+          <h2>6. Procesamiento de pagos</h2>
           <p>
-            El procesamiento de pagos con tarjeta es gestionado por redes de pago certificadas bajo el
-            estándar PCI-DSS. Icee Electronics actúa como facilitador tecnológico y no retiene datos
-            de tarjetas. Los fondos se depositan en la cuenta bancaria del comerciante según el calendario
-            acordado (generalmente T+1 día hábil).
+            El procesamiento de pagos con tarjeta está sujeto a los términos del procesador de pagos
+            asociado. Icee POS no almacena datos de tarjetas de crédito. Todos los datos de pago se
+            procesan de forma cifrada conforme a los estándares PCI-DSS. Las transacciones se depositan
+            en su cuenta bancaria en un plazo de T+1 días hábiles.
           </p>
 
-          <h2>6. Uso aceptable</h2>
-          <p>Queda prohibido usar Icee POS para:</p>
+          <h2>7. Uso aceptable</h2>
+          <p>Usted se compromete a no utilizar el Servicio para:</p>
           <ul>
-            <li>Procesar transacciones fraudulentas o de bienes/servicios ilegales.</li>
-            <li>Intentar acceder sin autorización a los sistemas o datos de otros usuarios.</li>
-            <li>Revender o sublicenciar el acceso a la plataforma sin autorización escrita.</li>
-            <li>Realizar ingeniería inversa del software.</li>
+            <li>Procesar transacciones fraudulentas o ilegales.</li>
+            <li>Vender productos o servicios prohibidos por la ley.</li>
+            <li>Interferir con el funcionamiento del sistema o de otros usuarios.</li>
+            <li>Intentar acceder sin autorización a los sistemas de Icee POS.</li>
           </ul>
 
-          <h2>7. Propiedad intelectual</h2>
+          <h2>8. Propiedad intelectual</h2>
           <p>
-            Todo el software, diseño, marca y contenido de Icee POS son propiedad de Icee Electronics S.A.S.
-            El uso del servicio no le otorga ningún derecho de propiedad sobre el software o la marca.
+            Todo el software, diseño, marcas y contenido del Servicio son propiedad exclusiva de
+            Icee Electronics S.A.S. o sus licenciantes. El uso del Servicio no le otorga ningún
+            derecho de propiedad sobre dichos elementos.
           </p>
 
-          <h2>8. Limitación de responsabilidad</h2>
+          <h2>9. Limitación de responsabilidad</h2>
           <p>
-            Icee Electronics no será responsable por pérdidas de datos causadas por fallas de conectividad,
-            daños al hardware por uso indebido, o interrupciones del servicio fuera de nuestro control
-            (fuerza mayor, fallas de terceros). Nuestra responsabilidad máxima se limita al valor del
-            último mes de suscripción pagado.
+            En la máxima medida permitida por la ley, Icee Electronics S.A.S. no será responsable
+            por daños indirectos, incidentales, especiales o consecuentes derivados del uso o la
+            imposibilidad de usar el Servicio. La responsabilidad total de la empresa no excederá
+            el monto pagado por el usuario en los últimos tres meses.
           </p>
 
-          <h2>9. Modificaciones al servicio</h2>
+          <h2>10. Modificaciones</h2>
           <p>
-            Nos reservamos el derecho de modificar, suspender o descontinuar funcionalidades del servicio
-            con previo aviso de 30 días. Los cambios en precios se notificarán con al menos 30 días de
-            anticipación.
+            Nos reservamos el derecho de modificar estos Términos en cualquier momento. Los cambios
+            significativos se notificarán con al menos 15 días de anticipación. El uso continuado
+            del Servicio después de dichos cambios constituye aceptación de los nuevos Términos.
           </p>
 
-          <h2>10. Ley aplicable</h2>
+          <h2>11. Ley aplicable</h2>
           <p>
-            Estos términos se rigen por las leyes de la República de Colombia. Para usuarios en Estados
-            Unidos, también aplican las regulaciones federales y estatales pertinentes al procesamiento
-            de pagos electrónicos.
+            Estos Términos se rigen por las leyes del Estado de Florida, Estados Unidos, sin perjuicio
+            de las disposiciones sobre conflicto de leyes. Cualquier disputa se resolverá mediante
+            arbitraje vinculante conforme a las reglas de la AAA.
           </p>
 
-          <h2>11. Contacto</h2>
-          <p>Para consultas sobre estos términos:</p>
+          <h2>12. Contacto</h2>
+          <p>Para preguntas sobre estos Términos de Uso:</p>
           <ul>
-            <li><strong>Correo:</strong> <a href="mailto:gestioncomercial@iceeelectronics.com">gestioncomercial@iceeelectronics.com</a></li>
-            <li><strong>WhatsApp:</strong> <a href="https://wa.me/573104527042">+57 310 452 7042</a></li>
+            <li><strong>Empresa:</strong> Icee Electronics S.A.S.</li>
+            <li><strong>Correo:</strong> <a href="mailto:admin@iceepos.com">admin@iceepos.com</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/17863860989">+1 786-386-0989</a></li>
           </ul>
 
         </div>

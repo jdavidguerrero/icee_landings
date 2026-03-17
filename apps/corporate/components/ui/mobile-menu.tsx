@@ -105,7 +105,7 @@ export default function MobileMenu() {
             </li>
             <li>
               <Link
-                href="https://pos.iceeelectronics.com"
+                href="https://iceepos.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex font-medium text-slate-800 hover:text-[#00B4D8] py-2"

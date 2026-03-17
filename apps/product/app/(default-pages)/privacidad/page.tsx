@@ -84,7 +84,7 @@ export default function PrivacyPage() {
           </ul>
           <p>
             Para ejercer estos derechos, escríbanos a{' '}
-            <a href="mailto:gestioncomercial@iceeelectronics.com">gestioncomercial@iceeelectronics.com</a>.
+            <a href="mailto:admin@iceepos.com">admin@iceepos.com</a>.
           </p>
 
           <h2>6. Retención de datos</h2>
@@ -114,8 +114,8 @@ export default function PrivacyPage() {
           </p>
           <ul>
             <li><strong>Empresa:</strong> Icee Electronics S.A.S.</li>
-            <li><strong>Correo:</strong> <a href="mailto:gestioncomercial@iceeelectronics.com">gestioncomercial@iceeelectronics.com</a></li>
-            <li><strong>WhatsApp:</strong> <a href="https://wa.me/573104527042">+57 310 452 7042</a></li>
+            <li><strong>Correo:</strong> <a href="mailto:admin@iceepos.com">admin@iceepos.com</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/17863860989">+1 786-386-0989</a></li>
           </ul>
 
         </div>

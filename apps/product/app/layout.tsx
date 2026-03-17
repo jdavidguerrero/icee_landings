@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     title: 'Icee POS | Sistema de Punto de Venta para Negocios Hispanos en USA',
     description:
       'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Desde $29/mes.',
-    url: 'https://pos.iceeelectronics.com',
+    url: 'https://iceepos.com',
     siteName: 'Icee POS',
     locale: 'es_US',
     type: 'website',
