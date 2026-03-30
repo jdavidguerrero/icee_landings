@@ -33,7 +33,7 @@ export default function Section04() {
       square: '2.6%+$0.10',
       toast: '$165+/mes',
       clover: '$60–90/mes',
-      icee: '✅ $29–49/mes',
+      icee: '✅ $49/mes',
     },
     {
       feature: 'Soporte en español',

@@ -10,14 +10,16 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             <Link className="block" href="/" aria-label="Icee POS">
-              <Image
-                src="/images/logos/iceepos-white.png"
-                width={140}
-                height={47}
-                style={{ height: 'auto' }}
-                alt="Icee POS logo"
-                priority
-              />
+              <div className="bg-white rounded-lg px-3 py-1.5">
+                <Image
+                  src="/images/logos/iceepos-logo.png"
+                  width={120}
+                  height={40}
+                  style={{ height: 'auto' }}
+                  alt="Icee POS logo"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 

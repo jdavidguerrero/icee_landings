@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Icee POS — La plataforma POS para negocios hispanos en EE.UU.',
-  description: 'Cobra con tarjeta, imprime recibos y controla tu negocio — todo en español. Planes desde $29/mes.',
+  description: 'Cobra con tarjeta, imprime recibos y controla tu negocio — todo en español. Plan único $49/mes.',
 }
 
 import Hero from '@/components/hero'

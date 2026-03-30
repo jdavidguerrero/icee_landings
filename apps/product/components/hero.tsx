@@ -95,7 +95,7 @@ export default function Hero() {
                 <span className="text-xs font-semibold text-white whitespace-nowrap">Sin contrato</span>
               </div>
               <div className="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
-                <span className="text-xs font-semibold text-white whitespace-nowrap">Desde $29/mes</span>
+                <span className="text-xs font-semibold text-white whitespace-nowrap">$49/mes — todo incluido</span>
               </div>
             </div>
 

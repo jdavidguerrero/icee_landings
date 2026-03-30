@@ -42,8 +42,7 @@ export default function TerminosPage() {
             El hardware puede adquirirse por separado o bajo esquema de financiamiento.
           </p>
           <ul>
-            <li><strong>Plan Básico:</strong> $29/mes — hasta 50 productos, reportes básicos.</li>
-            <li><strong>Plan Pro:</strong> $49/mes — productos ilimitados, reportes avanzados, modo offline.</li>
+            <li><strong>Plan único:</strong> $49/mes + 2.70% + 20¢ por transacción — acceso completo a todas las funciones, catálogo ilimitado, modo offline, reportes y soporte en español.</li>
           </ul>
           <p>
             Los cargos se realizan de forma mensual a la tarjeta o cuenta bancaria registrada. Los precios

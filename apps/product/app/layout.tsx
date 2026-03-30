@@ -55,12 +55,16 @@ const aspekta = localFont({
 
 export const metadata: Metadata = {
   title: 'Icee POS | Sistema de Punto de Venta para Negocios Hispanos en USA',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+  },
   description:
-    'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Desde $29/mes. Para food trucks, taquerías, swap meets y más.',
+    'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Plan único $49/mes. Para food trucks, taquerías, swap meets y más.',
   openGraph: {
     title: 'Icee POS | Sistema de Punto de Venta para Negocios Hispanos en USA',
     description:
-      'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Desde $29/mes.',
+      'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Plan único $49/mes.',
     url: 'https://iceepos.com',
     siteName: 'Icee POS',
     locale: 'es_US',
@@ -70,7 +74,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Icee POS | Sistema de Punto de Venta para Negocios Hispanos en USA',
     description:
-      'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Desde $29/mes.',
+      'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Plan único $49/mes.',
   },
 }
 
