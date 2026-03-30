@@ -14,15 +14,13 @@ export default function Footer() {
           {/* 1st block — logo + tagline */}
           <div className="sm:col-span-12 lg:col-span-4 lg:max-w-xs">
             <Link className="inline-block mb-3" href="/" aria-label="Icee POS">
-              <div className="bg-white rounded-lg px-3 py-1.5">
-                <Image
-                  src="/images/logos/iceepos-logo.png"
-                  width={100}
-                  height={33}
-                  style={{ height: 'auto' }}
-                  alt="Icee POS logo"
-                />
-              </div>
+              <Image
+                src="/images/logos/iceepos-logo.png"
+                width={110}
+                height={37}
+                style={{ height: 'auto' }}
+                alt="Icee POS logo"
+              />
             </Link>
             <p className="text-sm text-slate-400">
               La plataforma POS para negocios hispanos en EE.UU.
