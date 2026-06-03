@@ -126,17 +126,6 @@ export default function StrIaPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </a>
-                {/* Powered by Keenon */}
-                <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-1.5 shadow-sm">
-                  <span className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">By</span>
-                  <Image
-                    src="/images/partners/keenon.png"
-                    alt="Keenon Robotics"
-                    width={70}
-                    height={24}
-                    className="object-contain h-[20px] w-auto"
-                  />
-                </div>
               </div>
             </div>
 

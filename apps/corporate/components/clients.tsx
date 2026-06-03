@@ -3,7 +3,6 @@ import Image from 'next/image'
 const partners = [
   { name: 'Newland',  src: '/images/partners/newland.png'  },
   { name: 'Sinova',   src: '/images/partners/sinova.png'   },
-  { name: 'Keenon',   src: '/images/partners/keenon.png'   },
   { name: 'Spectra',  src: '/images/partners/spectra.png'  },
   { name: 'Urovo',    src: '/images/partners/urovo.png'    },
   { name: 'Topwise',  src: '/images/partners/topwise.png'  },

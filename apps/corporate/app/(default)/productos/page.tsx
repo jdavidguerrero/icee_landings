@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Catálogo de Productos — Icee Electronics',
-  description: 'Hardware financiero y dispositivos electrónicos de las principales marcas: Sunmi, Nexgo, Urovo, Spectra, Ciontek, Keenon.',
+  description: 'Hardware financiero y dispositivos electrónicos de las principales marcas: Sunmi, Nexgo, Urovo, Spectra, Ciontek, Topwise, Verifone.',
 }
 
 import ProductsCatalog from './ProductsCatalog'
