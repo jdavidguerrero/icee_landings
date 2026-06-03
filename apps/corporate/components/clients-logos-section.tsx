@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
 const clients = [
-  { name: 'Cliente 1', src: '/images/clients/client-01.png' },
-  { name: 'Cliente 2', src: '/images/clients/client-02.png' },
-  { name: 'Cliente 3', src: '/images/clients/client-03.png' },
-  { name: 'Cliente 4', src: '/images/clients/client-04.png' },
-  { name: 'Cliente 5', src: '/images/clients/client-05.png' },
-  { name: 'Cliente 6', src: '/images/clients/client-06.png' },
-  { name: 'Cliente 7', src: '/images/clients/client-07.png' },
-  { name: 'Cliente 8', src: '/images/clients/client-08.png' },
-  { name: 'Cliente 9', src: '/images/clients/client-09.png' },
+  { name: 'Newland', src: '/images/clients/newland.png' },
+  { name: 'Sinova', src: '/images/clients/sinova.png' },
+  { name: 'Spectra', src: '/images/clients/spectra.png' },
+  { name: 'Urovo', src: '/images/clients/urovo.png' },
+  { name: 'Topwise', src: '/images/clients/topwise.png' },
+  { name: 'Sunmi', src: '/images/clients/sunmi.png' },
+  { name: 'Nexgo', src: '/images/clients/nexgo.png' },
+  { name: 'Verifone', src: '/images/clients/verifone.png' },
+  { name: 'Ciontek', src: '/images/clients/ciontek.png' },
 ]
 
 // Duplicate for seamless infinite loop
@@ -50,7 +50,7 @@ export default function ClientsLogosSection() {
                   alt={client.name}
                   width={140}
                   height={52}
-                  className="object-contain h-[46px] w-auto max-w-[130px] opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="object-contain h-[40px] w-auto max-w-[120px] opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             </div>

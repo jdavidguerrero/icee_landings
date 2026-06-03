@@ -18,12 +18,12 @@ export default function QuoteSection() {
             </div>
 
             <blockquote>
-              <p className="text-2xl md:text-3xl font-playfair-display text-slate-800 italic mb-6 leading-snug">
-                "Más de una década construyendo infraestructura de pagos segura, certificada y escalable para el sector financiero en América Latina y Estados Unidos."
+              <p className="text-2xl md:text-3xl font-playfair-display text-slate-800 italic mb-6 leading-snug" style={{ fontFamily: "'Century Gothic', 'Futura', 'Trebuchet MS', sans-serif" }}>
+                "Soluciones integrales que impulsan el crecimiento de tu negocio"
               </p>
               <footer>
                 <cite className="text-slate-500 font-medium not-italic">
-                  — Icee Electronics S.A.S · Certificados PCI-DSS Nivel 1
+                  — Icee Electronics S.A.S · +10 años de experiencia
                 </cite>
               </footer>
             </blockquote>

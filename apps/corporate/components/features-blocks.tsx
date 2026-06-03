@@ -96,7 +96,7 @@ const slides: Slide[] = [
     description: 'Reparación correctiva y preventiva de dispositivos electrónicos. Más de 120,000 procesos históricos bajo estándares PCI-DSS.',
     tag: '+120K procesos',
     href: '/mantenimiento',
-    bg: { type: 'video', src: '/videos/icee_video_lab2.mp4' },
+    bg: { type: 'video', src: '/videos/video-reparacion.mp4' },
   },
   {
     id: 'software',
@@ -105,7 +105,7 @@ const slides: Slide[] = [
     description: 'Software integrado y plataformas POS para el sector financiero. Soluciones a medida para negocios en Colombia, Ecuador y USA.',
     tag: 'Tecnología propia',
     href: '/software',
-    bg: { type: 'image', src: '/images/section-bg-1.png' },
+    bg: { type: 'video', src: '/videos/icee_presentacion.mp4' },
   },
   {
     id: 'robotica',
@@ -123,7 +123,7 @@ const slides: Slide[] = [
     description: 'Soluciones modulares de arquitectura sostenible para comunidades, hospitalidad e innovación. Vivir y trabajar diferente.',
     tag: 'EACH',
     href: '/each',
-    bg: { type: 'image', src: '/images/section-bg-1.png' },
+    bg: { type: 'video', src: '/videos/video-capsulas.mp4' },
   },
 ]
 

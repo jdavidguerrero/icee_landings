@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import LangToggle from './lang-toggle'
 
 export default function Header() {
   return (
@@ -10,20 +11,25 @@ export default function Header() {
           {/* Site branding */}
           <div className="shrink-0 mr-4">
             <Link className="block" href="/" aria-label="Icee POS">
-              <Image
-                src="/images/logos/iceepos-logo.png"
-                width={130}
-                height={44}
-                style={{ height: 'auto' }}
-                alt="Icee POS logo"
-                priority
-              />
+              <div className="bg-white rounded-lg px-3 py-1.5">
+                <Image
+                  src="/images/logos/iceepos-logo.png"
+                  width={120}
+                  height={40}
+                  style={{ height: 'auto' }}
+                  alt="Icee POS logo"
+                  priority
+                />
+              </div>
             </Link>
           </div>
 
           {/* Desktop navigation */}
           <nav className="flex grow">
             <ul className="flex grow justify-end flex-wrap items-center">
+              <li>
+                <LangToggle />
+              </li>
               <li className="ml-3">
                 <a
                   className="btn-sm inline-flex items-center gap-2 text-white bg-[#25D366] hover:bg-[#1ebe5a] font-semibold shadow-xs shadow-[#25D366]/20"

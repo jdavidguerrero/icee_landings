@@ -65,7 +65,7 @@ export default function Section01() {
               </div>
               <h4 className="text-xl font-bold mb-1">¿Cansado de apps en inglés?</h4>
               <p className="text-slate-500">
-                Square, Toast y Clover no hablan tu idioma. Soporte limitado, menús confusos, y cero contexto hispano.
+                Las apps más populares no hablan tu idioma. Soporte limitado, menús confusos, y cero contexto hispano.
               </p>
             </div>
 

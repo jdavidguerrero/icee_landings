@@ -65,17 +65,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#aliados" className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out">
-                  Portal de Aliados
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:gestioncomercial@iceeelectronics.com"
-                  className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out"
-                >
-                  Contacto
-                </a>
+                <a href="#lineas-negocio" className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out">Contacto</a>
               </li>
             </ul>
           </div>
@@ -170,7 +160,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-slate-300 transition duration-150 ease-in-out"
             >
-              PCI-DSS Nivel 1
+              PCI-DSS Nivel 2
             </a>
           </div>
 

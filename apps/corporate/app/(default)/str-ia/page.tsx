@@ -151,7 +151,7 @@ export default function StrIaPage() {
                 className="absolute inset-0 w-full h-full object-cover"
                 aria-label="IceeBot robots en acción"
               >
-                <source src="/videos/icee_robot.mp4" type="video/mp4" />
+                <source src="/videos/video-str-ia.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060F1E]/40 to-transparent pointer-events-none" />
             </div>
