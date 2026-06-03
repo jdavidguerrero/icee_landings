@@ -1,15 +1,15 @@
 import Image from 'next/image'
 
 const clients = [
-  { name: 'Newland', src: '/images/clients/newland.png' },
-  { name: 'Sinova', src: '/images/clients/sinova.png' },
-  { name: 'Spectra', src: '/images/clients/spectra.png' },
-  { name: 'Urovo', src: '/images/clients/urovo.png' },
-  { name: 'Topwise', src: '/images/clients/topwise.png' },
-  { name: 'Sunmi', src: '/images/clients/sunmi.png' },
-  { name: 'Nexgo', src: '/images/clients/nexgo.png' },
-  { name: 'Verifone', src: '/images/clients/verifone.png' },
-  { name: 'Ciontek', src: '/images/clients/ciontek.png' },
+  { name: 'Newland', src: '/images/partners/newland.png' },
+  { name: 'Sinova', src: '/images/partners/sinova.png' },
+  { name: 'Spectra', src: '/images/partners/spectra.png' },
+  { name: 'Urovo', src: '/images/partners/urovo.png' },
+  { name: 'Topwise', src: '/images/partners/topwise.png' },
+  { name: 'Sunmi', src: '/images/partners/sunmi.png' },
+  { name: 'Nexgo', src: '/images/partners/nexgo.png' },
+  { name: 'Verifone', src: '/images/partners/verifone.png' },
+  { name: 'Ciontek', src: '/images/partners/ciontek.png' },
 ]
 
 // Duplicate for seamless infinite loop
