@@ -31,6 +31,10 @@ export const metadata: Metadata = {
     title: 'Icee Electronics | Soluciones en Tecnología de Pagos y Electrónica',
     description: 'Empresa líder en comercialización, mantenimiento y desarrollo de soluciones tecnológicas de pago. +10 años de experiencia. PCI-DSS certificado.',
   },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({

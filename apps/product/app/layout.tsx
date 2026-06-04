@@ -56,8 +56,9 @@ const aspekta = localFont({
 export const metadata: Metadata = {
   title: 'Icee POS | Sistema de Punto de Venta para Negocios Hispanos en USA',
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   description:
     'Terminal POS todo-en-uno en español. Cobra con tarjeta, imprime recibos, funciona sin internet. Plan único $49/mes. Para food trucks, taquerías, swap meets y más.',
