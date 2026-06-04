@@ -1,6 +1,6 @@
 export const metadata = {
   title: 'Mantenimiento y Reparación — Icee Electronics',
-  description: 'Centro de servicio especializado con más de 120.000 procesos históricos y certificación PCI-DSS nivel 1.',
+  description: 'Centro de servicio especializado con más de 120.000 procesos históricos y certificación PCI-DSS nivel 2.',
 }
 
 import Link from 'next/link'
@@ -19,7 +19,7 @@ const services = [
   {
     icon: '🔒',
     title: 'Certificación PCI-DSS',
-    description: 'Todos los procesos se ejecutan bajo estándares PCI-DSS Nivel 1 — el estándar más alto de seguridad en pagos.',
+    description: 'Todos los procesos se ejecutan bajo estándares PCI-DSS Nivel 2 — el estándar más alto de seguridad en pagos.',
   },
   {
     icon: '⚡',
@@ -156,7 +156,7 @@ export default function MantenimientoPage() {
           <div className="bg-gradient-to-br from-[#00B4D8]/10 to-[#48CAE4]/5 border border-[#00B4D8]/25 rounded-3xl p-10">
             <div className="text-4xl mb-4">🔒</div>
             <h2 className="text-2xl font-bold text-white mb-3 font-playfair-display">
-              Certificados PCI-DSS Nivel 1
+              Certificados PCI-DSS Nivel 2
             </h2>
             <p className="text-slate-400 leading-relaxed mb-6">
               Cada proceso de mantenimiento sigue los protocolos de seguridad más estrictos del sector financiero.

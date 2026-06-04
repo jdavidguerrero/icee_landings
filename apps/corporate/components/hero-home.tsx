@@ -44,7 +44,7 @@ export default function HeroHome() {
             data-aos="fade-down"
           >
             <span className="w-2 h-2 bg-[#00B4D8] rounded-full animate-pulse" aria-hidden="true" />
-            <span className="text-xs font-semibold text-[#00B4D8] uppercase tracking-widest">PCI-DSS Nivel 1 Certificado</span>
+            <span className="text-xs font-semibold text-[#00B4D8] uppercase tracking-widest">PCI-DSS Nivel 2 Certificado</span>
             <span className="text-slate-500 text-xs">·</span>
             <span className="text-xs text-slate-400">+6 años vigente</span>
           </div>
