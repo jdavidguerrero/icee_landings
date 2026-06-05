@@ -65,7 +65,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#lineas-negocio" className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out">Contacto</a>
+                <a href="https://wa.me/573104527042?text=Hola%2C%20me%20interesa%20Icee%20Electronics" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-[#00B4D8] transition duration-150 ease-in-out">Contacto</a>
               </li>
             </ul>
           </div>
