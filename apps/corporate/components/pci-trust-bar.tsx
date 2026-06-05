@@ -10,7 +10,7 @@ const badges = [
       </svg>
     ),
     label: 'PCI-DSS',
-    sub: 'Level 1 Certified',
+    sub: 'Nivel 2 Certificado',
     highlight: true,
   },
   {
