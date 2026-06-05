@@ -23,7 +23,7 @@ export default function Footer() {
               </Link>
             </div>
             <div className="text-slate-400 text-sm leading-relaxed mb-4">
-              Soluciones innovadoras en tecnología de pagos y electrónica.
+              Soluciones integrales que impulsan el crecimiento de tu negocio.
             </div>
             {/* WhatsApp link */}
             <a
