@@ -114,7 +114,7 @@ const slides: Slide[] = [
     description: 'Renting y venta de soluciones robóticas con inteligencia artificial para la transformación empresarial y automatización de procesos.',
     tag: 'STR-IA',
     href: '/str-ia',
-    bg: { type: 'video', src: '/videos/icee_robot.mp4' },
+    bg: { type: 'video', src: '/videos/video-str-ia.mp4' },
   },
   {
     id: 'each',

@@ -85,7 +85,7 @@ export default function ClientsSection() {
           data-aos-delay="200"
         >
           {[
-            { label: 'PCI-DSS Level 1', icon: '🛡️' },
+            { label: 'PCI-DSS Nivel 2', icon: '🛡️' },
             { label: 'ISO 27001 alineados', icon: '✅' },
             { label: 'Cifrado TLS 256-bit', icon: '🔐' },
             { label: 'Tokenización de datos', icon: '🔒' },
