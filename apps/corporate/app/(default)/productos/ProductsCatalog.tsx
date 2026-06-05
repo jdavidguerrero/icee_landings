@@ -48,7 +48,7 @@ const brands: Brand[] = [
       { name: 'N6', type: 'Terminal POS', description: 'Terminal básico robusto para entornos de alto volumen de transacciones.', image: '/images/products/nexgo/n6.png' },
       { name: 'EF60', type: 'Terminal POS', description: 'Dispositivo ECR con impresora, scanner y conectividad LTE. Solución todo-en-uno para retail.', image: '/images/products/nexgo/ef60.png' },
       { name: 'EF910', type: 'Terminal POS', description: 'Terminal premium con doble pantalla y capacidades avanzadas de reportes en tiempo real.', image: '/images/products/nexgo/ef910.png' },
-      { name: 'UN20', type: 'Autoservicio', description: 'Kiosco de pago autónomo para facturación de servicios públicos y recaudos.' },
+      { name: 'UN20', type: 'Autoservicio', description: 'Kiosco de pago autónomo para facturación de servicios públicos y recaudos.', image: '/images/products/nexgo/un20.png' },
       { name: 'KD68', type: 'Autoservicio', description: 'Dispositivo de autoservicio para consulta de saldo, pagos y recargas en puntos de atención.', image: '/images/products/nexgo/kd68.png' },
       { name: 'N62', type: 'Autoservicio', description: 'Terminal de autoservicio compacto para consulta y pago de facturas.', image: '/images/products/nexgo/n62.png' },
       { name: 'AF910', type: 'Autoservicio', description: 'Kiosco avanzado con biometría facial, impresora y dispensador de efectivo.', image: '/images/products/nexgo/af910.png' },
