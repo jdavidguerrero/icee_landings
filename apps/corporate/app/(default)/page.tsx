@@ -2,7 +2,7 @@ import Hero from '@/components/hero-home'
 import PciTrustBar from '@/components/pci-trust-bar'
 import Stats from '@/components/stats'
 import FeaturesBlocks from '@/components/features-blocks'
-import FeaturedProduct from '@/components/featured-product'
+// import FeaturedProduct from '@/components/featured-product' // hidden temporarily
 import TestimonialsSection from '@/components/testimonials-section'
 import ClientsLogosSection from '@/components/clients-logos-section'
 import Clients from '@/components/clients'
@@ -15,7 +15,7 @@ export default function Home() {
       <PciTrustBar />
       <Stats />
       <FeaturesBlocks />
-      <FeaturedProduct />
+      {/* <FeaturedProduct /> — hidden temporarily */}
       <TestimonialsSection />
       <ClientsLogosSection />
       <Clients />
